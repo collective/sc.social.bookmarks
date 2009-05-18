@@ -1,0 +1,34 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="sc.social.bookmarks">
+    
+    <browser:page
+        for="*"
+        name="social_bookmarks_view"
+        class=".bookmarks.SocialBookmarks"
+        allowed_attributes="enabled"
+        permission="zope.Public"
+        />
+    <browser:viewlet
+        name="sc.social.bookmarks"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".viewlets.SocialBookmarksViewlet"
+        permission="zope.Public"
+        />
+    <browser:resourceDirectory
+        name="sb_images"
+        directory="images"
+        permission="zope.Public"
+        />
+    <browser:resourceDirectory
+        name="sb_logo"
+        directory="logo"
+        permission="zope.Public"
+        />
+    <browser:resourceDirectory
+        name="sb_stylesheets"
+        directory="stylesheets"
+        permission="zope.Public"
+        />
+</configure>

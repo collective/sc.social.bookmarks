@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sc.social.bookmarks\n"
+"POT-Creation-Date: 2009-02-27 17:49+0000\n"
+"PO-Revision-Date: 2009-02-17 15:45 -0300\n"
+"Last-Translator: Erico Andrei <erico@simplesconsultoria.com.br>\n"
+"Language-Team: Simples Consultoria <contato@simplesconsultoria.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: pt-br\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: sc.social.bookmarks\n"
+
+#. Default: "Bookmark & Share:"
+#: ../browser/templates/bookmarks.pt:5
+msgid "Bookmark & Share:"
+msgstr "Compartilhe"
+
+#: ../controlpanel/bookmarks.py:61
+msgid "Providers"
+msgstr "Serviços"
+
+#: ../controlpanel/bookmarks.py:60
+msgid "Select Social Bookmarks Providers available for this site."
+msgstr "Escolha os serviços de bookmark social disponíveis para este site."
+
+#: ../controlpanel/bookmarks.py:59
+msgid "Social Bookmark Providers settings"
+msgstr "Configurações de bookmarks sociais"
+
+#. Default: "Social Bookmarks"
+#: ../profiles/default/actionicons.xml
+#: ../profiles/default/controlpanel.xml
+msgid "Social Bookmarks"
+msgstr "Bookmarks sociais"
+
+#. Default: "Please select content types in which the viewlet will be applied."
+#: ../controlpanel/bookmarks.py:34
+msgid "help_portal_types"
+msgstr "Selecione os tipos de conteúdo para os quais os bookmarks sociais serão utilizados."
+
+#. Default: "Please check any provider you want to be enabled to your visitors."
+#: ../controlpanel/bookmarks.py:26
+msgid "help_selected_providers"
+msgstr "Por favor escolha os serviços que os usuários do seu site terão acesso"
+

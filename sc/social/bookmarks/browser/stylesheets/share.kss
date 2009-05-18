@@ -1,0 +1,11 @@
+#document-action-socialbookmark:mouseover()  {
+    action-client: removeClass;
+    removeClass-kssSelector: htmlid(shareit);
+    removeClass-value:hidden;
+}
+
+#shareit:mouseover()  {
+    action-client: addClass;
+    addClass-kssSelector: htmlid(shareit);
+    addClass-value:hidden;
+}

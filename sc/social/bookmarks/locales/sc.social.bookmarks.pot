@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-02-27 17:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#. Default: "Bookmark & Share:"
+#: ../browser/templates/bookmarks.pt:5
+msgid "Bookmark & Share:"
+msgstr ""
+
+#: ../controlpanel/bookmarks.py:61
+msgid "Providers"
+msgstr ""
+
+#: ../controlpanel/bookmarks.py:60
+msgid "Select Social Bookmarks Providers available for this site."
+msgstr ""
+
+#: ../controlpanel/bookmarks.py:59
+msgid "Social Bookmark Providers settings"
+msgstr ""
+
+#. Default: "Social Bookmarks"
+#: ../profiles/default/actionicons.xml
+#: ../profiles/default/controlpanel.xml
+msgid "Social Bookmarks"
+msgstr ""
+
+#. Default: "Please select content types in which the viewlet will be applied."
+#: ../controlpanel/bookmarks.py:34
+msgid "help_portal_types"
+msgstr ""
+
+#. Default: "Please check any provider you want to be enabled to your visitors."
+#: ../controlpanel/bookmarks.py:26
+msgid "help_selected_providers"
+msgstr ""
+

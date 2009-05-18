@@ -1,0 +1,70 @@
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
+#document-action-socialbookmark {
+display:block;
+float:right;}
+
+#document-action-socialbookmark a,
+#document-action-socialbookmark a:hover,
+#document-action-socialbookmark a:visited {padding:1px;}
+
+#viewlet-social-bookmarks {
+    position: absolute;
+	width: 480px;
+	z-index: 1;
+	margin-top: -30px;
+	padding-top: 13px;
+    right:16%;
+}
+
+#viewlet_bookmarks {
+    list-style-image:none;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+#viewlet_bookmarks li {
+	display: block;
+	float: left;
+	width: 30%;
+	height: 20px;
+}
+
+
+#viewlet_bookmarks li a {
+    color:#000000 !important;
+    font-size:11px;
+    font-weight:bold;
+    text-decoration: !important;
+    border-bottom: 0px;
+    background:none!important;
+}
+
+#viewlet_bookmarks li a:hover {
+    text-decoration: underline;
+}
+
+#exit {
+	padding:0  10px 10px 10px;
+	position: relative;
+	display: block;
+}
+
+#shareit {
+	background :#FFFFFF;
+	border: 1px solid #CCCCCC;
+	margin: 0 auto 10px 0px;
+	padding: 0 5px 5px;
+        width: 480px;
+}
+
+
+#shareit a {text-decoration: none !important;}
+ 
+.hidden {display: none;}
+
+
+
+/* </dtml-with> */

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<action-icons xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="sc.social.bookmarks">
+ <action-icon category="controlpanel"
+              action_id="socialbookmarks"
+              title="Social Bookmarks" priority="0"
+              icon_expr="++resource++sb_logo/ico-social.gif"
+              i18n:attributes="title"/>
+</action-icons>

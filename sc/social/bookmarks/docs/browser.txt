@@ -1,0 +1,57 @@
+Accessing as portal owner
+-------------------------
+
+  >>> from Products.Five.testbrowser import Browser
+  >>> from Testing.ZopeTestCase import user_password
+  >>> browser = Browser()
+  >>> browser.addHeader('Authorization',
+  ...                   'Basic %s:%s' % ('portal_owner', user_password))
+
+Configure Providers
+-------------------
+
+First we select which content types will show the bookmark action::
+
+  >>> browser.open('%s/@@bookmarks-providers' % self.portal.absolute_url())
+  >>> browser.getControl('Page').selected = True
+  >>> browser.getControl('News Item').selected = True
+  >>> browser.getControl('Save').click()
+  >>> 'Changes saved.' in browser.contents
+  True
+
+Then we need to configure our bookmarks providers, but, as zope.testbrowser is
+ not js capable, we will cheat here and set providers manually::
+
+  >>> self.loginAsPortalOwner()
+  >>> self.portal.portal_properties.sc_social_bookmarks_properties._updateProperty('bookmark_providers',['Del.icio.us','Facebook','Digg','Book.mark.hu',])
+
+Creating a 'bookable' content type
+----------------------------------
+  >>> browser.open(self.portal.absolute_url())
+  >>> browser.getLink('Add new').click()
+  >>> 'Add new item' in browser.contents
+  True
+  >>> browser.getControl('News Item').click()
+  >>> browser.getControl('Add').click()
+  >>> browser.getControl('Title').value = 'Hello World'
+  >>> browser.getControl('Save').click()
+  >>> 'Changes saved.' in browser.contents
+  True
+  >>> browser.url == 'http://nohost/plone/hello-world'
+  True
+  
+Bookmarking it
+--------------
+  >>> 'Bookmark' in browser.contents
+  True
+  >>> 'Bookmark & Share' in browser.contents
+  True
+  >>> 'Del.icio.us' in browser.contents
+  True
+  >>> 'Facebook' in browser.contents
+  True
+  >>> 'Digg' in browser.contents
+  True
+  >>> 'Book.mark.hu' in browser.contents
+  True
+
