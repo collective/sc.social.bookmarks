@@ -37,7 +37,6 @@ float:right;}
     color:#000000 !important;
     font-size:11px;
     font-weight:bold;
-    text-decoration: !important;
     border-bottom: 0px;
     background:none!important;
 }
@@ -64,7 +63,5 @@ float:right;}
 #shareit a {text-decoration: none !important;}
  
 .hidden {display: none;}
-
-
 
 /* </dtml-with> */
