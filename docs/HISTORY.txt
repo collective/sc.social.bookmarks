@@ -1,7 +1,15 @@
 Changelog
 =========
 
-0.9 ()
+1.0 (2009-12-04)
+-----------------
+
+    * Fix order of providers [lucmult]
+    * Improve styles [tamosauskas]
+
+
+
+0.9 (2009-08-15)
 -----------------
 
     * Moves code to svn.plone.org/svn/collective/sc.social.bookmarks/

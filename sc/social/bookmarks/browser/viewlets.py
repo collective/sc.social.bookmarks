@@ -29,14 +29,26 @@ class SocialBookmarksViewlet(ViewletBase):
         """
         bookmark_providers = self.bookmark_providers
         providers=[]
-        for provider in all_providers:
-            
-            pId = provider.get('id','')
-            if (not pId) or (not(pId in bookmark_providers)):
+        #all_ids = [provider.get('id', '') for provider in all_providers if provider.get('id', '')]
+        for bookmarkId in bookmark_providers:
+            tmp_providers = [provider for provider in all_providers if provider.get('id', '') == bookmarkId]
+            if not tmp_providers:
                 continue
+            else:
+                provider = tmp_providers[0]
+                
             logo = provider.get('logo','')
             url = provider.get('url','')
-            providers.append({'id':pId,'logo':logo,'url':url})
+            providers.append({'id': bookmarkId, 'logo': logo, 'url': url})
+        
+        #for provider in all_providers:
+        #    
+        #    pId = provider.get('id','')
+        #    if (not pId) or (not(pId in bookmark_providers)):
+        #        continue
+        #    logo = provider.get('logo','')
+        #    url = provider.get('url','')
+        #    providers.append({'id':pId,'logo':logo,'url':url})
         
         return providers
     
