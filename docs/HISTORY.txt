@@ -1,8 +1,14 @@
 Changelog
 =========
 
-trunk (2009-12-04)
+trunk (2010-01-06)
 ------------------
+
+* xxx [Simples Consultoria]
+
+
+1 (2010-01-06)
+--------------
 
 * xxx [Simples Consultoria]
 
