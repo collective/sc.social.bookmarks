@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join("sc", "social", "bookmarks", "version.txt")).read().strip()
+version = '1.1dev'
 
 setup(name='sc.social.bookmarks',
       version=version,
