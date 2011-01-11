@@ -1,5 +1,4 @@
 
-from zope.component import getMultiAdapter, queryMultiAdapter, getUtility
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.viewlets import ViewletBase
@@ -12,7 +11,7 @@ class SocialBookmarksViewlet(ViewletBase):
     """
     """
     render = ViewPageTemplateFile("templates/bookmarks.pt")
-    
+
     def __init__(self, context, request, view, manager):
         super(SocialBookmarksViewlet, self).__init__(context, request, view, manager)
         pp = getToolByName(context,'portal_properties')
@@ -22,7 +21,7 @@ class SocialBookmarksViewlet(ViewletBase):
         else:
             self.bookmark_providers = []
             self.enabled_portal_types = []
-    
+
     @memoize
     def _availableProviders(self):
         """
@@ -36,22 +35,22 @@ class SocialBookmarksViewlet(ViewletBase):
                 continue
             else:
                 provider = tmp_providers[0]
-                
+
             logo = provider.get('logo','')
             url = provider.get('url','')
             providers.append({'id': bookmarkId, 'logo': logo, 'url': url})
-        
+
         #for provider in all_providers:
-        #    
+        #
         #    pId = provider.get('id','')
         #    if (not pId) or (not(pId in bookmark_providers)):
         #        continue
         #    logo = provider.get('logo','')
         #    url = provider.get('url','')
         #    providers.append({'id':pId,'logo':logo,'url':url})
-        
+
         return providers
-    
+
     def providers(self):
         """Returns a list of dicts with providers already
            filtered and populated"""
@@ -71,11 +70,11 @@ class SocialBookmarksViewlet(ViewletBase):
             provider['url'] = Template(url_tmpl).safe_substitute(param)
             providers.append(provider)
         return providers
-    
+
     def enabled(self):
-        """Validates if the viewlet should be enabled 
+        """Validates if the viewlet should be enabled
            for this context"""
         context = self.context
         enabled_portal_types = self.enabled_portal_types
         return context.portal_type in enabled_portal_types
-    
+

@@ -1,8 +1,6 @@
 import unittest
 import doctest
 
-from zope.testing import doctestunit
-from zope.component import testing
 from Testing import ZopeTestCase as ztc
 
 from Products.Five import zcml
@@ -55,10 +53,10 @@ def test_suite():
         #    test_class=TestCase),
 
         ztc.FunctionalDocFileSuite(
-            'browser.txt', 
+            'browser.txt',
             package='sc.social.bookmarks.docs',
-            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE | 
-                        doctest.NORMALIZE_WHITESPACE | 
+            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE |
+                        doctest.NORMALIZE_WHITESPACE |
                         doctest.ELLIPSIS,
             test_class=TestCase),
 
