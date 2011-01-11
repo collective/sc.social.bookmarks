@@ -1,5 +1,6 @@
-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+# -*- coding: utf-8 -*-
+from Acquisition import aq_inner
+from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
@@ -7,26 +8,21 @@ from sc.social.bookmarks.config import all_providers
 from string import Template
 import sre
 
-class SocialBookmarksViewlet(ViewletBase):
-    """
-    """
-    render = ViewPageTemplateFile("templates/bookmarks.pt")
+class SocialBookmarks(BrowserView):
 
-    def __init__(self, context, request, view, manager):
-        super(SocialBookmarksViewlet, self).__init__(context, request, view, manager)
-        pp = getToolByName(context,'portal_properties')
-        if hasattr(pp,'sc_social_bookmarks_properties'):
-            self.bookmark_providers = pp.sc_social_bookmarks_properties.getProperty("bookmark_providers") or []
-            self.enabled_portal_types = pp.sc_social_bookmarks_properties.getProperty("enabled_portal_types") or []
-        else:
-            self.bookmark_providers = []
-            self.enabled_portal_types = []
+    def __init__(self, context, request):
+        self.context = aq_inner(context)
+        self.request = request
 
     @memoize
     def _availableProviders(self):
         """
         """
-        bookmark_providers = self.bookmark_providers
+        pp = getToolByName(self.context,'portal_properties')
+        if hasattr(pp,'sc_social_bookmarks_properties'):
+            bookmark_providers = pp.sc_social_bookmarks_properties.getProperty("bookmark_providers") or []
+        else:
+            bookmark_providers = []
         providers=[]
         #all_ids = [provider.get('id', '') for provider in all_providers if provider.get('id', '')]
         for bookmarkId in bookmark_providers:
@@ -71,10 +67,23 @@ class SocialBookmarksViewlet(ViewletBase):
             providers.append(provider)
         return providers
 
+    @property
     def enabled(self):
-        """Validates if the viewlet should be enabled
+        """Validates if social bookmarks should be enabled
            for this context"""
-        context = self.context
-        enabled_portal_types = self.enabled_portal_types
-        return context.portal_type in enabled_portal_types
+        pp = getToolByName(self.context,'portal_properties')
+        if hasattr(pp,'sc_social_bookmarks_properties'):
+            enabled_portal_types = pp.sc_social_bookmarks_properties.getProperty("enabled_portal_types") or []
+        else:
+            enabled_portal_types = []
+        return self.context.portal_type in enabled_portal_types
+
+
+
+class SocialBookmarksViewlet(ViewletBase, SocialBookmarks):
+    """
+    """
+
+    def __init__(self, context, request, view, manager):
+        super(SocialBookmarksViewlet, self).__init__(context, request, view, manager)
 

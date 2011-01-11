@@ -6,14 +6,15 @@
     <browser:page
         for="*"
         name="social_bookmarks_view"
-        class=".bookmarks.SocialBookmarks"
-        allowed_attributes="enabled"
+        class=".common.SocialBookmarks"
+        template="templates/bookmarks_view.pt"
         permission="zope.Public"
         />
     <browser:viewlet
         name="sc.social.bookmarks"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
-        class=".viewlets.SocialBookmarksViewlet"
+        class=".common.SocialBookmarksViewlet"
+        template="templates/bookmarks_viewlet.pt"
         permission="zope.Public"
         />
     <browser:resourceDirectory

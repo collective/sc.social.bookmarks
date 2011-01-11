@@ -5,7 +5,11 @@ Changelog
 ----------------
    
    * Code cleanup.
-      [thet]
+     [thet]
+
+   * Creating a bookmarks view and linking the bookmarks-action to it.
+     [thet]
+     TODO: remove KSS dependency and to everything with jQuery.
 
 1.0 (2009-12-04)
 -----------------
