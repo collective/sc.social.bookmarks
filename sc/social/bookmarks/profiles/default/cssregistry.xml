@@ -2,5 +2,5 @@
 <object name="portal_css" meta_type="Stylesheets Registry" autogroup="False">
  <stylesheet title="" cacheable="True" compression="safe" cookable="True"
     enabled="on" expression=""
-    id="++resource++sb_stylesheets/social_bookmark.css" media="screen" rel="stylesheet" rendering="import"/>
+    id="++resource++sb_resources/social_bookmark.css" media="screen" rel="stylesheet" rendering="import"/>
 </object>
