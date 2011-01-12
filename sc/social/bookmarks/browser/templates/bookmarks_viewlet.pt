@@ -1,7 +1,0 @@
-<div id="viewlet-social-bookmarks" i18n:domain="sc.social.bookmarks" tal:condition="view/enabled">
-<div id="shareit" class="hidden">
-<div id="exit">
-    <metal:macro use-macro="context/social_bookmarks_view/macros/bookmarks" />
-</div>
-</div>
-</div>

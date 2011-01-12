@@ -8,7 +8,10 @@ from sc.social.bookmarks.config import all_providers
 from string import Template
 import sre
 
-class SocialBookmarks(BrowserView):
+
+class SocialBookmarksBase(object):
+    """ Base class for social bookmarks
+    """
 
     def __init__(self, context, request):
         self.context = aq_inner(context)
@@ -80,8 +83,13 @@ class SocialBookmarks(BrowserView):
 
 
 
-class SocialBookmarksViewlet(ViewletBase, SocialBookmarks):
+class SocialBookmarksView(BrowserView, SocialBookmarksBase):
+    """ Social Bookmarks View
     """
+
+
+class SocialBookmarksViewlet(ViewletBase, SocialBookmarksBase):
+    """ Social Bookmarks Viewlet
     """
 
     def __init__(self, context, request, view, manager):

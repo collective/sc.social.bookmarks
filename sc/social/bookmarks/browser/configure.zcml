@@ -6,7 +6,7 @@
     <browser:page
         for="*"
         name="social_bookmarks_view"
-        class=".common.SocialBookmarks"
+        class=".common.SocialBookmarksView"
         template="templates/bookmarks_view.pt"
         permission="zope.Public"
         />
@@ -17,19 +17,15 @@
         template="templates/bookmarks_viewlet.pt"
         permission="zope.Public"
         />
+
     <browser:resourceDirectory
         name="sb_images"
-        directory="images"
+        directory="sb_images"
         permission="zope.Public"
         />
     <browser:resourceDirectory
-        name="sb_logo"
-        directory="logo"
-        permission="zope.Public"
-        />
-    <browser:resourceDirectory
-        name="sb_stylesheets"
-        directory="stylesheets"
+        name="sb_resources"
+        directory="sb_resources"
         permission="zope.Public"
         />
 </configure>

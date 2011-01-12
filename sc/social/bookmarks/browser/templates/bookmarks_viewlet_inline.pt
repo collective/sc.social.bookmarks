@@ -1,0 +1,5 @@
+<div class="sc_social_bookmarks sb_inline"
+    i18n:domain="sc.social.bookmarks"
+    tal:condition="view/enabled">
+    <metal:macro use-macro="context/social_bookmarks_view/macros/bookmarks" />
+</div>
