@@ -1,4 +1,5 @@
-.sc_inline .bookmark_id { display:none; } 
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
 
 #document-action-socialbookmark {
 display:block;
@@ -63,3 +64,4 @@ float:right;}
  
 .hidden {display: none;}
 
+/* </dtml-with> */

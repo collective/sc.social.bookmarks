@@ -1,3 +1,5 @@
+from zope.schema import Int
+from zope.schema import TextLine
 from zope.schema import Tuple
 from zope.schema import Choice
 from zope.component import adapts
@@ -13,7 +15,9 @@ from zope.formlib.form import FormFields
 from plone.app.controlpanel.form import ControlPanelForm
 from zope.app.form.browser.itemswidgets import MultiSelectWidget as BaseMultiSelectWidget
 from zope.app.form.browser.itemswidgets import OrderedMultiSelectWidget as BaseOrderedMultiSelectWidget
+from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget, MultiCheckBoxVocabularyWidget
 
+from sc.social.bookmarks.config import default_providers
 from sc.social.bookmarks import SocialBookmarksMessageFactory as _
 
 class MultiSelectWidget(BaseMultiSelectWidget):
@@ -31,9 +35,9 @@ class OrderedMultiSelectWidget(BaseOrderedMultiSelectWidget):
         """Initialize the widget."""
         super(OrderedMultiSelectWidget, self).__init__(field,
             field.value_type.vocabulary, request)
-
+            
 class IProvidersSchema(Interface):
-
+    
     bookmark_providers = Tuple(
         title=u'Bookmark providers',
         description=_(u'help_selected_providers',
@@ -49,17 +53,17 @@ class IProvidersSchema(Interface):
         ),
         value_type=Choice(vocabulary="plone.app.vocabularies.ReallyUserFriendlyTypes")
     )
-
+    
 class ProvidersControlPanelAdapter(SchemaAdapterBase):
-
+    
     adapts(IPloneSiteRoot)
     implements(IProvidersSchema)
-
+    
     def __init__(self, context):
         super(ProvidersControlPanelAdapter, self).__init__(context)
         portal_properties = getToolByName(context, 'portal_properties')
         self.context = portal_properties.sc_social_bookmarks_properties
-
+    
     bookmark_providers = ProxyFieldProperty(IProvidersSchema['bookmark_providers'])
     enabled_portal_types = ProxyFieldProperty(IProvidersSchema['enabled_portal_types'])
 
@@ -68,7 +72,7 @@ class ProvidersControlPanel(ControlPanelForm):
     form_fields = FormFields(IProvidersSchema)
     form_fields['bookmark_providers'].custom_widget = OrderedMultiSelectWidget
     form_fields['enabled_portal_types'].custom_widget = MultiSelectWidget
-
+    
     label = _('Social Bookmark Providers settings')
     description = _('Select Social Bookmarks Providers available for this site.')
     form_name = _('Providers')

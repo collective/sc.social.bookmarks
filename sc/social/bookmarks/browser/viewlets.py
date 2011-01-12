@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
-from Acquisition import aq_inner
-from Products.Five import BrowserView
+
+from zope.component import getMultiAdapter, queryMultiAdapter, getUtility
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
@@ -8,24 +8,26 @@ from sc.social.bookmarks.config import all_providers
 from string import Template
 import sre
 
-
-class SocialBookmarksBase(object):
-    """ Base class for social bookmarks
+class SocialBookmarksViewlet(ViewletBase):
     """
-
-    def __init__(self, context, request):
-        self.context = aq_inner(context)
-        self.request = request
-
+    """
+    render = ViewPageTemplateFile("templates/bookmarks.pt")
+    
+    def __init__(self, context, request, view, manager):
+        super(SocialBookmarksViewlet, self).__init__(context, request, view, manager)
+        pp = getToolByName(context,'portal_properties')
+        if hasattr(pp,'sc_social_bookmarks_properties'):
+            self.bookmark_providers = pp.sc_social_bookmarks_properties.getProperty("bookmark_providers") or []
+            self.enabled_portal_types = pp.sc_social_bookmarks_properties.getProperty("enabled_portal_types") or []
+        else:
+            self.bookmark_providers = []
+            self.enabled_portal_types = []
+    
     @memoize
     def _availableProviders(self):
         """
         """
-        pp = getToolByName(self.context,'portal_properties')
-        if hasattr(pp,'sc_social_bookmarks_properties'):
-            bookmark_providers = pp.sc_social_bookmarks_properties.getProperty("bookmark_providers") or []
-        else:
-            bookmark_providers = []
+        bookmark_providers = self.bookmark_providers
         providers=[]
         #all_ids = [provider.get('id', '') for provider in all_providers if provider.get('id', '')]
         for bookmarkId in bookmark_providers:
@@ -34,22 +36,22 @@ class SocialBookmarksBase(object):
                 continue
             else:
                 provider = tmp_providers[0]
-
+                
             logo = provider.get('logo','')
             url = provider.get('url','')
             providers.append({'id': bookmarkId, 'logo': logo, 'url': url})
-
+        
         #for provider in all_providers:
-        #
+        #    
         #    pId = provider.get('id','')
         #    if (not pId) or (not(pId in bookmark_providers)):
         #        continue
         #    logo = provider.get('logo','')
         #    url = provider.get('url','')
         #    providers.append({'id':pId,'logo':logo,'url':url})
-
+        
         return providers
-
+    
     def providers(self):
         """Returns a list of dicts with providers already
            filtered and populated"""
@@ -69,29 +71,11 @@ class SocialBookmarksBase(object):
             provider['url'] = Template(url_tmpl).safe_substitute(param)
             providers.append(provider)
         return providers
-
-    @property
+    
     def enabled(self):
-        """Validates if social bookmarks should be enabled
+        """Validates if the viewlet should be enabled 
            for this context"""
-        pp = getToolByName(self.context,'portal_properties')
-        if hasattr(pp,'sc_social_bookmarks_properties'):
-            enabled_portal_types = pp.sc_social_bookmarks_properties.getProperty("enabled_portal_types") or []
-        else:
-            enabled_portal_types = []
-        return self.context.portal_type in enabled_portal_types
-
-
-
-class SocialBookmarksView(BrowserView, SocialBookmarksBase):
-    """ Social Bookmarks View
-    """
-
-
-class SocialBookmarksViewlet(ViewletBase, SocialBookmarksBase):
-    """ Social Bookmarks Viewlet
-    """
-
-    def __init__(self, context, request, view, manager):
-        super(SocialBookmarksViewlet, self).__init__(context, request, view, manager)
-
+        context = self.context
+        enabled_portal_types = self.enabled_portal_types
+        return context.portal_type in enabled_portal_types
+    

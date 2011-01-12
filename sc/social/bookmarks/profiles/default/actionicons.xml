@@ -4,6 +4,6 @@
  <action-icon category="controlpanel"
               action_id="socialbookmarks"
               title="Social Bookmarks" priority="0"
-              icon_expr="++resource++sb_resources/ico-social.gif"
+              icon_expr="++resource++sb_logo/ico-social.gif"
               i18n:attributes="title"/>
 </action-icons>

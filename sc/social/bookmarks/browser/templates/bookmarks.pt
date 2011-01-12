@@ -1,0 +1,20 @@
+<div id="viewlet-social-bookmarks" i18n:domain="sc.social.bookmarks" tal:condition="view/enabled">
+<div id="shareit" class="hidden">
+       <div id="exit">
+    <h4 i18n:translate="">Bookmark &amp; Share:</h4>
+    <ul id="viewlet_bookmarks">
+
+        <li tal:repeat="provider view/providers">
+            <a href="" tal:attributes="href provider/url">
+                <img src="" 
+                     tal:attributes="src string:${view/site_url}/++resource++sb_images/${provider/logo}; alt string:${provider/id}" />
+                &nbsp;
+                <span tal:replace="provider/id">reddit</span>
+            </a>
+        </li>
+
+    </ul>
+    <div class="visualClear"></div>
+</div>
+</div>
+</div>
