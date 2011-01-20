@@ -5,6 +5,9 @@
 
 __author__ = """Erico Andrei <erico@simplesconsultoria.com.br>"""
 __docformat__ = 'plaintext'
+
+PROJECTNAME = 'sc.social.bookmarks'
+
 default_providers = []
 all_providers = [{'id':'','url':'','title':'','logo':''},
                  {'id':'Del.icio.us','url':'http://del.icio.us/post?url=%(url)s&amp;title=%(title)s','logo':'delicious.png'},

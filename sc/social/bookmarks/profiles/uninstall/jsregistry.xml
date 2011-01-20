@@ -9,7 +9,8 @@
     enabled="True"
     expression=""
     id="sarissa.js"
-    inline="False" />
+    inline="False"
+    remove="True" />
   
  <javascript
     cacheable="True"
@@ -18,6 +19,7 @@
     enabled="True"
     expression="python: here.restrictedTraverse('@@kss_devel_mode').isoff()"
     id="++resource++kukit.js"
-    inline="False" />
+    inline="False"
+    remove="True" />
 
 </object>

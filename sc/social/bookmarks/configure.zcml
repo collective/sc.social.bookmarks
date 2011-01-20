@@ -5,10 +5,13 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="sc.social.bookmarks">
 
-    <five:registerPackage package="." initialize=".initialize" />
+    <!-- Include configuration for dependencies listed in setup.py -->
+    <includeDependencies package="." />
     
     <include package=".browser" />
     <include package=".controlpanel" />
+
+    <five:registerPackage package="." />
 
     <genericsetup:registerProfile
         name="default"
@@ -16,13 +19,24 @@
         directory="profiles/default"
         description="SC Social Bookmarks Profile"
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        />
+        
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="SC:Social Bookmarks uninstall"
+        directory="profiles/uninstall"
+        description="SC Social Bookmarks Profile"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         />
         
     <i18n:registerTranslations directory="locales" />
 
     <utility
-      component=".vocabularies.SocialBookmarksProvidersVocabularyFactory"
-      name="plone.app.vocabularies.SocialBookmarksProviders"
-      />
+        component=".vocabularies.SocialBookmarksProvidersVocabularyFactory"
+        name="plone.app.vocabularies.SocialBookmarksProviders"
+        />
 
 </configure>
+

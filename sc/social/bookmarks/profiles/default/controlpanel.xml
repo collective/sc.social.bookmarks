@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
-<object name="portal_controlpanel"
+<object name="portal_controlpanel" meta_type="Plone Control Panel Tool" purge="False"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="sc.social.bookmarks">
-  <configlet title="Social Bookmarks" action_id="socialbookmarks"
-     appId="sc.social.bookmarks" category="Products" condition_expr=""
-     url_expr="string:${portal_url}/@@bookmarks-providers"
-     visible="True" i18n:attributes="title">
-    <permission>Manage portal</permission>
-  </configlet>
+    <configlet title="Social Bookmarks" action_id="socialbookmarks" appId="sc.social.bookmarks"
+        category="Products" condition_expr=""
+        icon_expr="string:${portal_url}/++resource++sb_logo/ico-social.gif"
+        url_expr="string:${portal_url}/@@bookmarks-providers"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
 </object>
+

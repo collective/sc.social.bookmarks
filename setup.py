@@ -25,9 +25,15 @@ setup(name='sc.social.bookmarks',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+          # I don't understand why, but if I don't include this package I get "ImportError: No module named i18nmessageid"
+          'Plone',
+          # same thing, I get "ImportError: No module named PIL"
+          'PIL',
+#          'plone.app.registry',
       ],
       entry_points="""
-      # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
+

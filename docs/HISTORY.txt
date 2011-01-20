@@ -7,10 +7,16 @@ trunk (2010-01-06)
 * xxx [Simples Consultoria]
 
 
-1 (2010-01-06)
+hvelarde-plone4-compatibility (2010-10-19)
 --------------
 
-* xxx [Simples Consultoria]
+    * change on version number
+    * entry_points to z3c.autoinclude.plugin; there's no need for a ZCML slug now
+    * fixing MessageFactory
+    * adding icon_expr to controlpanel.xml as required in Plone 4
+    * adding some basic tests
+    * aesthetic changes on xml files
+      [hvelarde]
 
 
 1.0 (2009-12-04)
@@ -18,7 +24,6 @@ trunk (2010-01-06)
 
     * Fix order of providers [lucmult]
     * Improve styles [tamosauskas]
-
 
 
 0.9 (2009-08-15)

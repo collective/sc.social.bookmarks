@@ -18,7 +18,7 @@ from zope.app.form.browser.itemswidgets import OrderedMultiSelectWidget as BaseO
 from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget, MultiCheckBoxVocabularyWidget
 
 from sc.social.bookmarks.config import default_providers
-from sc.social.bookmarks import SocialBookmarksMessageFactory as _
+from sc.social.bookmarks import _
 
 class MultiSelectWidget(BaseMultiSelectWidget):
     """ """
@@ -76,3 +76,4 @@ class ProvidersControlPanel(ControlPanelForm):
     label = _('Social Bookmark Providers settings')
     description = _('Select Social Bookmarks Providers available for this site.')
     form_name = _('Providers')
+
