@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-02-27 17:49+0000\n"
+"POT-Creation-Date: 2009-08-25 02:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,19 +15,19 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 #. Default: "Bookmark & Share:"
-#: ../browser/templates/bookmarks.pt:5
-msgid "Bookmark & Share:"
+#: ../browser/templates/bookmarks.pt:4
+msgid "Bookmark &amp; Share:"
 msgstr ""
 
-#: ../controlpanel/bookmarks.py:61
+#: ../controlpanel/bookmarks.py:78
 msgid "Providers"
 msgstr ""
 
-#: ../controlpanel/bookmarks.py:60
+#: ../controlpanel/bookmarks.py:77
 msgid "Select Social Bookmarks Providers available for this site."
 msgstr ""
 
-#: ../controlpanel/bookmarks.py:59
+#: ../controlpanel/bookmarks.py:76
 msgid "Social Bookmark Providers settings"
 msgstr ""
 
@@ -38,12 +38,12 @@ msgid "Social Bookmarks"
 msgstr ""
 
 #. Default: "Please select content types in which the viewlet will be applied."
-#: ../controlpanel/bookmarks.py:34
+#: ../controlpanel/bookmarks.py:51
 msgid "help_portal_types"
 msgstr ""
 
 #. Default: "Please check any provider you want to be enabled to your visitors."
-#: ../controlpanel/bookmarks.py:26
+#: ../controlpanel/bookmarks.py:43
 msgid "help_selected_providers"
 msgstr ""
 
