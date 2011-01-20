@@ -1,0 +1,6 @@
+<layers>
+ <layer
+     name="SocialBookmarks"
+     interface="sc.social.bookmarks.browser.interfaces.ISocialBookmarksLayer"
+     />
+</layers>
