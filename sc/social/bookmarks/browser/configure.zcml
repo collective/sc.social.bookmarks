@@ -6,7 +6,7 @@
     <browser:page
         for="*"
         name="social_bookmarks_view"
-        class=".bookmarks.SocialBookmarks"
+        class=".common.SocialBookmarksView"
         allowed_attributes="enabled"
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
@@ -15,28 +15,21 @@
     <browser:viewlet
         name="sc.social.bookmarks"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
-        class=".viewlets.SocialBookmarksViewlet"
+        class=".common.SocialBookmarksViewlet"
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
         
     <browser:resourceDirectory
         name="sb_images"
-        directory="images"
+        directory="sb_images"
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
-        
+             
     <browser:resourceDirectory
-        name="sb_logo"
-        directory="logo"
-        layer=".interfaces.ISocialBookmarksLayer"
-        permission="zope.Public"
-        />
-        
-    <browser:resourceDirectory
-        name="sb_stylesheets"
-        directory="stylesheets"
+        name="sb_resources"
+        directory="sb_resources"
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
