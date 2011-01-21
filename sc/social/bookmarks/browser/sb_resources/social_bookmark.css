@@ -1,5 +1,7 @@
-/* <dtml-with base_properties> (do not remove this :) */
-/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+.sc_inline .bookmark_id { display:none; } 
+.social_bookmarks_viewlet { display:none; }
+
+.social_bookmarks .portletItem .bookmark_id { display:none; }
 
 #document-action-socialbookmark {
 display:block;
@@ -11,10 +13,10 @@ float:right;}
 
 #viewlet-social-bookmarks {
     position: absolute;
-	width: 480px;
-	z-index: 1;
-	margin-top: -30px;
-	padding-top: 13px;
+  width: 480px;
+  z-index: 1;
+  margin-top: -30px;
+  padding-top: 13px;
     right:16%;
 }
 
@@ -26,10 +28,10 @@ float:right;}
 }
 
 #viewlet_bookmarks li {
-	display: block;
-	float: left;
-	width: 30%;
-	height: 20px;
+  display: block;
+  float: left;
+  width: 30%;
+  height: 20px;
 }
 
 
@@ -46,16 +48,16 @@ float:right;}
 }
 
 #exit {
-	padding:0  10px 10px 10px;
-	position: relative;
-	display: block;
+  padding:0  10px 10px 10px;
+  position: relative;
+  display: block;
 }
 
 #shareit {
-	background :#FFFFFF;
-	border: 1px solid #CCCCCC;
-	margin: 0 auto 10px 0px;
-	padding: 0 5px 5px;
+  background :#FFFFFF;
+  border: 1px solid #CCCCCC;
+  margin: 0 auto 10px 0px;
+  padding: 0 5px 5px;
         width: 480px;
 }
 
@@ -63,5 +65,3 @@ float:right;}
 #shareit a {text-decoration: none !important;}
  
 .hidden {display: none;}
-
-/* </dtml-with> */

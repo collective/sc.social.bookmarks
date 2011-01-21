@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<dl class="portlet social_bookmarks"
+    i18n:domain="sc.social.bookmarks">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span i18n:translate="social_bookmarks_portlet_title">
+            Soccial Bookmarks</span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+        <metal:macro use-macro="context/social_bookmarks_view/macros/bookmarks" />
+    </dd>
+
+</dl>
+</html>
+
+

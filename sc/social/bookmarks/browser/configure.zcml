@@ -9,6 +9,7 @@
         class=".common.SocialBookmarksView"
         allowed_attributes="enabled"
         layer=".interfaces.ISocialBookmarksLayer"
+        template="templates/bookmarks_view.pt"
         permission="zope.Public"
         />
         
@@ -16,6 +17,7 @@
         name="sc.social.bookmarks"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
         class=".common.SocialBookmarksViewlet"
+        template="templates/bookmarks_viewlet.pt"
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
