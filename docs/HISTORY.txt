@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.1 (unreleased)
-------------------
+1.1 (2011-01-21)
+----------------
 
     * Add portlet for social bookmarks. [thet]
 
