@@ -1,23 +1,24 @@
 Changelog
 =========
 
-trunk (2010-01-06)
+1.1 (unreleased)
 ------------------
 
-* xxx [Simples Consultoria]
+    * Add portlet for social bookmarks. [thet]
 
+    * Removed KSS dependency and replace functionality with jQuery. [thet]
+   
+    * Created a bookmarks view and assigned it as href for the bookmarks-action.
+      This makes it more accessible. [thet]
 
-hvelarde-plone4-compatibility (2010-10-19)
---------------
-
-    * change on version number
-    * entry_points to z3c.autoinclude.plugin; there's no need for a ZCML slug now
-    * fixing MessageFactory
-    * adding icon_expr to controlpanel.xml as required in Plone 4
-    * adding some basic tests
-    * aesthetic changes on xml files
-      [hvelarde]
-
+    * Code cleanup & refactoring. [thet]
+      
+    * change on version number [hvelarde]
+    * entry_points to z3c.autoinclude.plugin; there's no need for a ZCML slug now [hvelarde]
+    * fixing MessageFactory [hvelarde]
+    * adding icon_expr to controlpanel.xml as required in Plone 4 [hvelarde]
+    * adding some basic tests [hvelarde]
+    * aesthetic changes on xml files [hvelarde]
 
 1.0 (2009-12-04)
 -----------------

@@ -1,10 +1,10 @@
 sc.social.bookmarks
-===================
+====================
 
 Overview
---------
+----------
 
-This product adds a Bookmark & Share action to a Plone 3 site. 
+This product adds a Bookmark & Share action to a Plone 4 site. 
 
 It allows an anonymous or registered user to bookmark or share a content from a 
 Plone site to a service like Delicious, Digg, Reddit or Twitter (62 providers 
@@ -13,9 +13,7 @@ already included).
 Requirements
 ------------
 
-    - Plone 3.1.x (http://plone.org/products/plone)
-
-    - Plone 3.2.x (http://plone.org/products/plone)
+    - Plone 4.0.x (http://plone.org/products/plone)
     
 Installation
 ------------
@@ -29,19 +27,6 @@ To enable this product,on a buildout based installation:
         ...
         eggs = 
             sc.social.bookmarks
-
-    2. Tell the plone.recipe.zope2instance recipe to install a ZCML slug::
-
-        [instance]
-        ...
-        zcml = 
-            ...
-            sc.social.bookmarks
-    
-
-If another package depends on the sc.social.bookmarks egg or 
-includes its zcml directly you do not need to specify anything in the 
-buildout configuration: buildout will detect this automatically.
 
 After updating the configuration you need to run the ''bin/buildout'',
 which will take care of updating your system.
@@ -60,7 +45,13 @@ in order to see the effects of the product installation.
 Browsers and OS's
 -----------------
 
+This package has been tested with the following browsers and OS's:
+
+    * Google Chrome (Linux/Win7/WinXP/MacOSX)
+
     * Internet Explorer 7.0 (WinXP/Vista)
+    
+    * Firefox 4 beta9 (Linux)
     
     * Firefox 3 (WinXP/Vista/MacOSX)
     
@@ -75,6 +66,10 @@ Development of this product was sponsored by `Simples Consultoria
 
 Credits
 -------
+
+    * Johannes Raggam - Refactoring, portlet and conversion to jQuery
+
+    * Héctor Velarde - Plone 4 support, uninstall profile 
 
     * Thiago Tamosauskas (thiago at simplesconsultoria dot com dot br) - 
       Implementation
