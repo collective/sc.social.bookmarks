@@ -11,7 +11,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
 
-from sc.social.bookmarks import SocialBookmarksMessageFactory as _
+from sc.social.bookmarks import _
 from sc.social.bookmarks.browser.common import SocialBookmarksBase
 
 class ISocialBookmarksPortlet(IPortletDataProvider):
