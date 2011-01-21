@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlets
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="sc.social.bookmarks">
+  <portlet
+    addview="sc.social.bookmarks.sb_portlet"
+    title = "Social Bookmarks Portlet"
+    description = "Add a social bookmarks portlet."
+    />
+</portlets>

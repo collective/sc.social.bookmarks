@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlets>
+  <portlet
+    addview="sc.social.bookmarks.sb_portlet"
+    title = "Social Bookmarks Portlet"
+    description = "Add a social bookmarks portlet."
+    remove="True"
+    />
+</portlets>
