@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="sc.social.bookmarks">
     
     <browser:page
@@ -35,5 +36,14 @@
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
+
+    <plone:portlet
+        name="sc.social.bookmarks.sb_portlet"
+        interface=".sb_portlet.ISocialBookmarksPortlet"
+        assignment=".sb_portlet.Assignment"
+        renderer=".sb_portlet.Renderer"
+        addview=".sb_portlet.AddForm"
+        />
+
         
 </configure>
