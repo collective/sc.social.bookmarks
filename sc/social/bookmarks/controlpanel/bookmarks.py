@@ -17,7 +17,6 @@ from zope.app.form.browser.itemswidgets import MultiSelectWidget as BaseMultiSel
 from zope.app.form.browser.itemswidgets import OrderedMultiSelectWidget as BaseOrderedMultiSelectWidget
 from plone.app.controlpanel.widgets import MultiCheckBoxThreeColumnWidget, MultiCheckBoxVocabularyWidget
 
-from sc.social.bookmarks.config import default_providers
 from sc.social.bookmarks import _
 
 class MultiSelectWidget(BaseMultiSelectWidget):
