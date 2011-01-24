@@ -3,7 +3,7 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="sc.social.bookmarks">
-    
+
     <browser:page
         for="*"
         name="social_bookmarks_view"
@@ -13,7 +13,7 @@
         template="templates/bookmarks_view.pt"
         permission="zope.Public"
         />
-        
+
     <browser:viewlet
         name="sc.social.bookmarks"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
@@ -22,14 +22,14 @@
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
-        
+
     <browser:resourceDirectory
         name="sb_images"
         directory="sb_images"
         layer=".interfaces.ISocialBookmarksLayer"
         permission="zope.Public"
         />
-             
+
     <browser:resourceDirectory
         name="sb_resources"
         directory="sb_resources"
@@ -45,5 +45,4 @@
         addview=".sb_portlet.AddForm"
         />
 
-        
 </configure>
