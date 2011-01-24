@@ -2,13 +2,14 @@ from setuptools import setup, find_packages
 import os
 
 version = open(os.path.join("sc", "social", "bookmarks", "version.txt")).read().strip()
+longdesc = open(os.path.join(os.path.dirname(__file__), 'README.txt')).read()
+longdesc += open(os.path.join(os.path.dirname(__file__), 'docs', 'HISTORY.txt')).read()
 
 setup(name='sc.social.bookmarks',
       version=version,
       description="Add social bookmarking and sharing capabilities to a Plone Site",
-      long_description=open(os.path.join("sc", "social", "bookmarks", "README.txt")).read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      long_description=longdesc,
+      # Get more strings from http://www.python.org/pypi?:action=list_classifiers
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
@@ -36,4 +37,3 @@ setup(name='sc.social.bookmarks',
       target = plone
       """,
       )
-

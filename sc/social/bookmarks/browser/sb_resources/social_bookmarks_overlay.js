@@ -7,7 +7,7 @@ function sb_delay_function(fun) {
 }
 function sb_delay_clear() {
     if (sb_timeout) {
-      window.clearTimeout(sb_timeout);
+        window.clearTimeout(sb_timeout);
     }
 }
 
