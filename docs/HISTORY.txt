@@ -4,6 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+    * Add migration step. [thet]
     * More cleanup. [thet]
 
 

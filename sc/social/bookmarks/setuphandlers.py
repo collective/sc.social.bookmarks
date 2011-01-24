@@ -21,3 +21,6 @@ def uninstall(context):
     removeConfiglets(site)
     logger.log(logging.INFO, "Customized uninstallation done.")
 
+
+def upgrade_1_to_2(context):
+    context.runAllImportStepsFromProfile('profile-sc.social.bookmarks:default')
