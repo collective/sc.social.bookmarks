@@ -1,6 +1,5 @@
 import logging
 from Products.CMFCore.utils import getToolByName
-from plone.browserlayer import utils as layerutils
 
 logger = logging.getLogger("sc.social.bookmarks")
 

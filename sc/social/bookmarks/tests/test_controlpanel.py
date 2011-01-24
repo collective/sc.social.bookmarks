@@ -22,7 +22,7 @@ class SocialBookmarksTest(PloneTestCase):
         from AccessControl import Unauthorized
         self.logout()
         self.assertRaises(Unauthorized, self.portal.restrictedTraverse, '@@bookmarks-providers')
-        
+
     def test_configlet_install(self):
         controlpanel = getToolByName(self.portal, 'portal_controlpanel')
         installed = [a.getAction(self)['id'] for a in controlpanel.listActions()]

@@ -1,6 +1,5 @@
 import unittest
 
-from Products.CMFCore.utils import getToolByName
 from Products.PloneTestCase.ptc import PloneTestCase
 
 from sc.social.bookmarks.config import PROJECTNAME
@@ -19,7 +18,7 @@ CONFIGLETS = (
     )
 
 class InstallTest(PloneTestCase):
-    
+
     layer = SocialBookmarksLayer
 
     def test_stylesheets(self):
