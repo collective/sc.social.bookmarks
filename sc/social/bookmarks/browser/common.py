@@ -13,14 +13,22 @@ import re
 class SocialBookmarksBase(object):
     """ Abstract Base class for social bookmarks
     """
+    
     @memoize
-    def _availableProviders(self):
+    def _propertySheet(self):
         """
         """
         context = aq_inner(self.context)
         pp = getToolByName(context,'portal_properties')
-        if hasattr(pp,'sc_social_bookmarks_properties'):
-            bookmark_providers = pp.sc_social_bookmarks_properties.getProperty("bookmark_providers") or []
+        return getattr(pp,'sc_social_bookmarks_properties',None)
+    
+    @memoize
+    def _availableProviders(self):
+        """
+        """
+        sheet = self._propertySheet()
+        if sheet:
+            bookmark_providers = sheet.getProperty("bookmark_providers") or []
         else:
             bookmark_providers = []
         providers=[]
@@ -59,15 +67,26 @@ class SocialBookmarksBase(object):
         return providers
 
     @property
+    def action_enabled(self):
+        """Validates if social bookmarks should be enabled
+           for this context using an action"""
+        action = False
+        if self.enabled:
+            sheet = self._propertySheet()
+            if sheet:
+                action = sheet.getProperty("use_as_action") or False
+        return action
+
+    @property
     def enabled(self):
         """Validates if social bookmarks should be enabled
            for this context"""
         context = aq_inner(self.context)
-        pp = getToolByName(context,'portal_properties')
-        if hasattr(pp,'sc_social_bookmarks_properties'):
-            enabled_portal_types = pp.sc_social_bookmarks_properties.getProperty("enabled_portal_types") or []
-        else:
-            enabled_portal_types = []
+        sheet = self._propertySheet()
+        enabled_portal_types = []
+        if sheet:
+            enabled_portal_types = sheet.getProperty("enabled_portal_types") or []
+            
         return context.portal_type in enabled_portal_types
 
 

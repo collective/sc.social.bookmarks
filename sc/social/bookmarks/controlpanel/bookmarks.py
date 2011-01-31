@@ -1,3 +1,4 @@
+from zope.schema import Bool
 from zope.schema import Tuple
 from zope.schema import Choice
 from zope.component import adapts
@@ -50,6 +51,13 @@ class IProvidersSchema(Interface):
         value_type=Choice(vocabulary="plone.app.vocabularies.ReallyUserFriendlyTypes")
     )
 
+    use_as_action = Bool(
+        title=u'Use as a content action?',
+        description=_(u'help_portal_types',
+            default=u"Check this if you want the social bookmarks to appear as an action for contents.",
+        ),
+    )
+
 class ProvidersControlPanelAdapter(SchemaAdapterBase):
 
     adapts(IPloneSiteRoot)
@@ -62,6 +70,7 @@ class ProvidersControlPanelAdapter(SchemaAdapterBase):
 
     bookmark_providers = ProxyFieldProperty(IProvidersSchema['bookmark_providers'])
     enabled_portal_types = ProxyFieldProperty(IProvidersSchema['enabled_portal_types'])
+    use_as_action = ProxyFieldProperty(IProvidersSchema['use_as_action'])
 
 class ProvidersControlPanel(ControlPanelForm):
 
