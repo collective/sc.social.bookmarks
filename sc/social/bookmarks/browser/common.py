@@ -13,7 +13,7 @@ import re
 class SocialBookmarksBase(object):
     """ Abstract Base class for social bookmarks
     """
-    
+
     @memoize
     def _propertySheet(self):
         """
@@ -21,7 +21,7 @@ class SocialBookmarksBase(object):
         context = aq_inner(self.context)
         pp = getToolByName(context,'portal_properties')
         return getattr(pp,'sc_social_bookmarks_properties',None)
-    
+
     @memoize
     def _availableProviders(self):
         """
@@ -86,7 +86,7 @@ class SocialBookmarksBase(object):
         enabled_portal_types = []
         if sheet:
             enabled_portal_types = sheet.getProperty("enabled_portal_types") or []
-            
+
         return context.portal_type in enabled_portal_types
 
 

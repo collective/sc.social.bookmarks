@@ -8,28 +8,23 @@
 <body>
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
-
-    <div class="sc_social_bookmarks">
     <metal:macro define-macro="bookmarks"> 
+    <div class="sc_social_bookmarks">
         <h4 i18n:translate="">Bookmark &amp; Share:</h4>
-        <ul id="viewlet_bookmarks"
-            tal:define="portal_url context/@@plone_portal_state/portal_url">
+        <ul tal:define="portal_url context/@@plone_portal_state/portal_url">
             <li tal:repeat="provider view/providers">
                 <a href="" tal:attributes="href provider/url">
                     <img src="" 
                          tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo}; alt string:${provider/id}" />
-                    &nbsp;
                     <span class="bookmark_id" tal:content="provider/id">reddit</span>
                 </a>
             </li>
         </ul>
         <div class="visualClear"></div>
-    </metal:macro>
     </div>
+    </metal:macro>
 
 </metal:block>
 </metal:content-core>
 </body>
 </html>
-
-

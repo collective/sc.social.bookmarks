@@ -1,19 +1,7 @@
-<div id="viewlet-social-bookmarks"
-    class="social_bookmarks social_bookmarks_viewlet"
-    i18n:domain="sc.social.bookmarks"
-    tal:condition="view/action_enabled">
-<div id="shareit" tal:condition="view/action_enabled">
-<div id="exit">
+<div class="sc_social_bookmarks_viewlet">
+  <div class=""
+    tal:define="overlay_class python:view.action_enabled and ' sc_social_bookmarks_overlay' or ''"
+    tal:attributes="class string:sc_social_bookmarks_wrapper${overlay_class}" >
     <metal:macro use-macro="context/social_bookmarks_view/macros/bookmarks" />
-</div>
-</div>
-</div>
-
-<div id="viewlet-social-bookmarks"
-    class="social_bookmarks_inline"
-    i18n:domain="sc.social.bookmarks"
-    tal:condition="python:view.enabled and not view.action_enabled">
-<div id="vshareit">
-<metal:macro use-macro="context/social_bookmarks_view/macros/bookmarks" />
-</div>
+  </div>  
 </div>

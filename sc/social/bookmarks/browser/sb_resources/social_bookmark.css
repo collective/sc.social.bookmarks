@@ -1,67 +1,39 @@
-.sc_inline .bookmark_id { display:none; } 
-.social_bookmarks_viewlet { display:none; }
-
-.social_bookmarks .portletItem .bookmark_id { display:none; }
+.portlet .sc_social_bookmarks .bookmark_id { display:none; }
 
 #document-action-socialbookmark {
-display:block;
-float:right;}
-
+    display:block;
+    float:right; }
 #document-action-socialbookmark a,
 #document-action-socialbookmark a:hover,
 #document-action-socialbookmark a:visited {padding:1px;}
 
-#viewlet-social-bookmarks {
-    position: absolute;
-    width: 480px;
-    z-index: 1;
-    margin-top: -30px;
-    padding-top: 13px;
-    right:16%;
+.sc_social_bookmarks li a {
+    color:black;
+    font-size:90%;
+    font-weight:bold;
 }
-
-#viewlet_bookmarks {
+.sc_social_bookmarks ul { 
     list-style-image:none;
     list-style-type:none;
-    margin:0;
-    padding:0;
 }
-
-#viewlet_bookmarks li {
+.sc_social_bookmarks li {
     display: block;
     float: left;
-    width: 30%;
     height: 20px;
 }
-
-
-#viewlet_bookmarks li a {
-    color:#000000 !important;
-    font-size:11px;
-    font-weight:bold;
-    border-bottom: 0px;
-    background:none!important;
+.sc_social_bookmarks_viewlet li {
+    width:30%;
+}
+.sc_social_bookmarks_viewlet {
+    position:relative;
+}
+.sc_social_bookmarks_overlay {
+    /* display:none; */
+    position: absolute;
+    z-index: 1;
+    padding:10px;
+}
+.sc_social_bookmarks_wrapper {
+    border:1px solid black;
 }
 
-#viewlet_bookmarks li a:hover {
-    text-decoration: underline;
-}
-
-#exit {
-    padding:0  10px 10px 10px;
-    position: relative;
-    display: block;
-}
-
-#shareit {
-    background :#FFFFFF;
-    border: 1px solid #CCCCCC;
-    margin: 0 auto 10px 0px;
-    padding: 0 5px 5px;
-    width: 480px;
-}
-
-
-#shareit a {text-decoration: none !important;}
- 
-.hidden {display: none;}
