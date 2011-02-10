@@ -28,7 +28,7 @@
     position:relative;
 }
 .sc_social_bookmarks_overlay {
-    /* display:none; */
+    display:none;
     position: absolute;
     z-index: 1;
     padding:10px;
