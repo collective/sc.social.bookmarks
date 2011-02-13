@@ -16,11 +16,10 @@
                 <a href="" tal:attributes="href provider/url">
                     <img src="" 
                          tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo}; alt string:${provider/id}" />
-                    <span class="bookmark_id" tal:content="provider/id">reddit</span>
+                    <span class="bookmark_id" tal:content="provider/id">BOOKM</span>
                 </a>
             </li>
         </ul>
-        <div class="visualClear"></div>
     </div>
     </metal:macro>
 

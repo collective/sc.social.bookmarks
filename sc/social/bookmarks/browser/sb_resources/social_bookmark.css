@@ -7,18 +7,26 @@
 #document-action-socialbookmark a:hover,
 #document-action-socialbookmark a:visited {padding:1px;}
 
-.sc_social_bookmarks li a {
+#content .sc_social_bookmarks li a {
     color:black;
     font-size:90%;
     font-weight:bold;
+    text-decoration:none;
+    border:none;
 }
+#content .sc_social_bookmarks li a img {
+    margin-right:5px;
+}
+
+#content .sc_social_bookmarks ul, 
 .sc_social_bookmarks ul { 
     list-style-image:none;
     list-style-type:none;
+    margin:0;
 }
+#content .sc_social_bookmarks li,
 .sc_social_bookmarks li {
-    display: block;
-    float: left;
+    display: inline-block;
     height: 20px;
 }
 .sc_social_bookmarks_viewlet li {
@@ -31,9 +39,10 @@
     display:none;
     position: absolute;
     z-index: 1;
-    padding:10px;
 }
 .sc_social_bookmarks_wrapper {
-    border:1px solid black;
+    border:1px solid #CCC;
+    background:white;
+    padding:5px;
 }
 

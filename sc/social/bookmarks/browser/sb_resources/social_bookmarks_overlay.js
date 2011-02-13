@@ -27,11 +27,11 @@ jQuery(document).ready(function(){
             jQuery("div.sc_social_bookmarks_overlay").hide();
         });
     });
-    jQuery("div.social_bookmarks").mouseover(function(event) {
+    jQuery("div.sc_social_bookmarks_overlay").mouseover(function(event) {
         sb_delay_clear();
         jQuery("div.sc_social_bookmarks_overlay").show();
     });
-    jQuery("div.social_bookmarks").mouseout(function(event) {
+    jQuery("div.sc_social_bookmarks_overlay").mouseout(function(event) {
         jQuery("div.sc_social_bookmarks_overlay").hide();
     });
 });
