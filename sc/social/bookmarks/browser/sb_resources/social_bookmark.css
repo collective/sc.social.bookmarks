@@ -7,7 +7,8 @@
 #document-action-socialbookmark a:hover,
 #document-action-socialbookmark a:visited {padding:1px;}
 
-#content .sc_social_bookmarks li a {
+#content .sc_social_bookmarks li a ,
+dl.portlet .sc_social_bookmarks li a {
     color:black;
     font-size:90%;
     font-weight:bold;
@@ -19,13 +20,13 @@
 }
 
 #content .sc_social_bookmarks ul, 
-.sc_social_bookmarks ul { 
+dl.portlet .sc_social_bookmarks ul { 
     list-style-image:none;
     list-style-type:none;
     margin:0;
 }
 #content .sc_social_bookmarks li,
-.sc_social_bookmarks li {
+dl.portlet .sc_social_bookmarks li {
     display: inline-block;
     height: 20px;
 }

@@ -10,12 +10,13 @@
 <metal:block define-macro="content-core">
     <metal:macro define-macro="bookmarks"> 
     <div class="sc_social_bookmarks">
-        <h4 i18n:translate="">Bookmark &amp; Share:</h4>
         <ul tal:define="portal_url context/@@plone_portal_state/portal_url">
             <li tal:repeat="provider view/providers">
                 <a href="" tal:attributes="href provider/url">
                     <img src="" 
-                         tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo}; alt string:${provider/id}" />
+                        tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo};
+                        alt string:${provider/id};
+                        title string:${provider/id};" />
                     <span class="bookmark_id" tal:content="provider/id">BOOKM</span>
                 </a>
             </li>

@@ -7,8 +7,8 @@
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-        <span i18n:translate="social_bookmarks_portlet_title">
-            Social Bookmarks</span>
+        <span i18n:translate="social_bookmarks_title">
+            Bookmark & Share</span>
         <span class="portletTopRight"></span>
     </dt>
 
