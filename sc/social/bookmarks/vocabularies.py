@@ -1,7 +1,7 @@
-from zope.app.schema.vocabulary import IVocabularyFactory
 from zope.interface import implements
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
+from zope.schema.interfaces import IVocabularyFactory
 from sc.social.bookmarks.config import all_providers
 
 class SocialBookmarksProvidersVocabulary(object):

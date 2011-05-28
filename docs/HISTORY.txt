@@ -4,8 +4,11 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-    * Add migration step. [thet]
-    * More cleanup. [thet]
+* Add all dependencies to setup.py.
+* Zope API change: IVocabularyFactory now in zope.schema.interfaces.
+* Add migration step.
+* More cleanup.
+  [thet]
 
 
 1.1 (2011-01-21)
