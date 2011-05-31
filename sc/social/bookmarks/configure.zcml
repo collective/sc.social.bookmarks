@@ -7,8 +7,6 @@
 
   <include package="plone.app.portlets" />
 
-  <!-- Include configuration for dependencies listed in setup.py -->
-  <includeDependencies package="." />
   <five:registerPackage package="." />
   <i18n:registerTranslations directory="locales" />
 

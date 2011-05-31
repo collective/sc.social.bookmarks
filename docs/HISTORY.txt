@@ -4,6 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+* Plone 4.1 compatibility.
 * Add all dependencies to setup.py.
 * Zope API change: IVocabularyFactory now in zope.schema.interfaces.
 * Add migration step.
