@@ -36,7 +36,7 @@ class OrderedMultiSelectWidget(BaseOrderedMultiSelectWidget):
 class IProvidersSchema(Interface):
 
     bookmark_providers = Tuple(
-        title=u'Bookmark providers',
+        title=_(u'Bookmark providers'),
         description=_(u'help_selected_providers',
             default=u"Please check any provider you want to be enabled to your visitors.",
         ),
@@ -44,7 +44,7 @@ class IProvidersSchema(Interface):
     )
 
     enabled_portal_types = Tuple(
-        title=u'Content types',
+        title=_(u'Content types'),
         description=_(u'help_portal_types',
             default=u"Please select content types in which the viewlet will be applied.",
         ),
@@ -52,8 +52,8 @@ class IProvidersSchema(Interface):
     )
 
     use_as_action = Bool(
-        title=u'Use as a content action?',
-        description=_(u'help_portal_types',
+        title=_(u'Use as a content action?'),
+        description=_(u'help_show_overlay',
             default=u"Check this if you want the social bookmarks to appear as an action for contents.",
         ),
     )

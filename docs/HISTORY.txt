@@ -4,32 +4,31 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-* Plone 4.1 compatibility.
-* Add all dependencies to setup.py.
-* Zope API change: IVocabularyFactory now in zope.schema.interfaces.
-* Add migration step.
-* More cleanup.
-  [thet]
+    * German Translation
+      [rnix]
+    * Plone 4.1 compatibility.
+    * Add all dependencies to setup.py.
+    * Zope API change: IVocabularyFactory now in zope.schema.interfaces.
+    * Add migration step.
+    * More cleanup.
+      [thet]
 
 
 1.1 (2011-01-21)
 ----------------
 
     * Add portlet for social bookmarks. [thet]
-
     * Removed KSS dependency and replace functionality with jQuery. [thet]
-   
     * Created a bookmarks view and assigned it as href for the bookmarks-action.
       This makes it more accessible. [thet]
-
     * Code cleanup & refactoring. [thet]
-      
     * change on version number [hvelarde]
     * entry_points to z3c.autoinclude.plugin; there's no need for a ZCML slug now [hvelarde]
     * fixing MessageFactory [hvelarde]
     * adding icon_expr to controlpanel.xml as required in Plone 4 [hvelarde]
     * adding some basic tests [hvelarde]
     * aesthetic changes on xml files [hvelarde]
+
 
 1.0 (2009-12-04)
 -----------------
@@ -44,55 +43,48 @@ Changelog
     * Moves code to svn.plone.org/svn/collective/sc.social.bookmarks/
       [erico_andrei]
 
+
 0.8 (2009-05-18)
 ----------------
 
     * Fixes an annoying issue with dancing divs
       [tamosauskas]
 
+
 0.7 (2009-04-15)
 ----------------
     
     * Fixes string formatting error in providers without all parameters mapped
       [erico_andrei]
-      
     * Adds a condition to avoid displaying bookmark action on content types not
       configured to enabled it
       [erico_andrei]
 
+
 0.6 (2009-04-07)
 ----------------
 
-   * Support for ordering selected providers
-     [erico_andrei]
-
-   * Improvement on Control Panel usability, using new widgets
-     [erico_andrei]
-     
-   * Adds myspace icon
-     [tamosauskas]
+    * Support for ordering selected providers
+      [erico_andrei]
+    * Improvement on Control Panel usability, using new widgets
+      [erico_andrei]
+    * Adds myspace icon
+      [tamosauskas]
    
    
 0.5 (2009-02-27)
 ----------------
 
-   * Initial Public Release to PyPi and Plone.org
-     [erico_andrei]
-     
-   * Very basic i18n support
-     [erico_andrei]
-     
-   * Styling and css
-     [tamosauskas]
-   
-   * KSS-enabled document action
-     [tamosauskas]
-   
-   * Filtering of content types
-     [erico_andrei]
-   
-   * Support for a fixed set of bookmarks providers
-     [erico_andrei]
-   
-   * Initial release
-     
+    * Initial Public Release to PyPi and Plone.org
+      [erico_andrei]
+    * Very basic i18n support
+      [erico_andrei]
+    * Styling and css
+      [tamosauskas]
+    * KSS-enabled document action
+      [tamosauskas]
+    * Filtering of content types
+      [erico_andrei]
+    * Support for a fixed set of bookmarks providers
+      [erico_andrei]
+    * Initial release

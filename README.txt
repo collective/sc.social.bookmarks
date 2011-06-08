@@ -1,8 +1,8 @@
 sc.social.bookmarks
-====================
+===================
 
 Overview
-----------
+--------
 
 This product adds a Bookmark & Share action to a Plone 4 site. 
 
@@ -10,11 +10,13 @@ It allows an anonymous or registered user to bookmark or share a content from a
 Plone site to a service like Delicious, Digg, Reddit or Twitter (62 providers 
 already included).
 
+
 Requirements
 ------------
 
-    - Plone 4.0.x (http://plone.org/products/plone)
-    
+    - Plone 4.x (http://plone.org/products/plone)
+
+
 Installation
 ------------
     
@@ -42,6 +44,7 @@ if you installed it from the quick installer.
 Note: You may have to empty your browser cache and save your resource registries
 in order to see the effects of the product installation.
 
+
 Browsers and OS's
 -----------------
 
@@ -57,6 +60,7 @@ This package has been tested with the following browsers and OS's:
     
     * Safari 3 (WinXP/MacOSX)
 
+
 Sponsoring
 ----------
 
@@ -64,8 +68,8 @@ Development of this product was sponsored by `Simples Consultoria
 <http://www.simplesconsultoria.com.br/>`_.
 
 
-Credits
--------
+Contributors
+------------
 
     * Johannes Raggam - Refactoring, portlet and conversion to jQuery
 
@@ -76,3 +80,7 @@ Credits
     
     * Erico Andrei (erico at simplesconsultoria dot com dot br) - Packaging and
       plumbing.
+    
+    * Johannes Raggam - Refactoring, portlet and conversion to jQuery
+    
+    * Robert Niederreiter - This and that
