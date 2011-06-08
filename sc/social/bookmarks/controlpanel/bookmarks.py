@@ -17,21 +17,24 @@ from zope.app.form.browser.itemswidgets import OrderedMultiSelectWidget as BaseO
 
 from sc.social.bookmarks import _
 
-class MultiSelectWidget(BaseMultiSelectWidget):
-    """ """
 
+class MultiSelectWidget(BaseMultiSelectWidget):
+    
     def __init__(self, field, request):
-        """Initialize the widget."""
+        """Initialize the widget.
+        """
         super(MultiSelectWidget, self).__init__(field,
             field.value_type.vocabulary, request)
 
-class OrderedMultiSelectWidget(BaseOrderedMultiSelectWidget):
-    """ """
 
+class OrderedMultiSelectWidget(BaseOrderedMultiSelectWidget):
+    
     def __init__(self, field, request):
-        """Initialize the widget."""
+        """Initialize the widget.
+        """
         super(OrderedMultiSelectWidget, self).__init__(field,
             field.value_type.vocabulary, request)
+
 
 class IProvidersSchema(Interface):
 
@@ -53,13 +56,21 @@ class IProvidersSchema(Interface):
 
     use_as_action = Bool(
         title=_(u'Use as a content action?'),
-        description=_(u'help_show_overlay',
+        description=_(u'help_use_as_content_action',
             default=u"Check this if you want the social bookmarks to appear as an action for contents.",
         ),
     )
+    
+    show_icons_only = Bool(
+        title=_(u'Show icons only?'),
+        description=_(u'help_show_icons_only',
+            default=u"Check this if you want the social bookmarks to be rendered as icons only.",
+        ),
+    )
+
 
 class ProvidersControlPanelAdapter(SchemaAdapterBase):
-
+    
     adapts(IPloneSiteRoot)
     implements(IProvidersSchema)
 
@@ -71,9 +82,11 @@ class ProvidersControlPanelAdapter(SchemaAdapterBase):
     bookmark_providers = ProxyFieldProperty(IProvidersSchema['bookmark_providers'])
     enabled_portal_types = ProxyFieldProperty(IProvidersSchema['enabled_portal_types'])
     use_as_action = ProxyFieldProperty(IProvidersSchema['use_as_action'])
+    show_icons_only = ProxyFieldProperty(IProvidersSchema['show_icons_only'])
+
 
 class ProvidersControlPanel(ControlPanelForm):
-
+    
     form_fields = FormFields(IProvidersSchema)
     form_fields['bookmark_providers'].custom_widget = OrderedMultiSelectWidget
     form_fields['enabled_portal_types'].custom_widget = MultiSelectWidget

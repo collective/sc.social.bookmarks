@@ -11,21 +11,17 @@ import re
 
 
 class SocialBookmarksBase(object):
-    """ Abstract Base class for social bookmarks
+    """Abstract Base class for social bookmarks.
     """
 
     @memoize
     def _propertySheet(self):
-        """
-        """
         context = aq_inner(self.context)
         pp = getToolByName(context,'portal_properties')
         return getattr(pp,'sc_social_bookmarks_properties',None)
 
     @memoize
     def _availableProviders(self):
-        """
-        """
         sheet = self._propertySheet()
         if sheet:
             bookmark_providers = sheet.getProperty("bookmark_providers") or []
@@ -47,7 +43,8 @@ class SocialBookmarksBase(object):
 
     def providers(self):
         """Returns a list of dicts with providers already
-           filtered and populated"""
+        filtered and populated.
+        """
         context = aq_inner(self.context)
         available = self._availableProviders()
         providers = []
@@ -65,11 +62,20 @@ class SocialBookmarksBase(object):
             provider['url'] = Template(url_tmpl).safe_substitute(param)
             providers.append(provider)
         return providers
-
+    
+    @property
+    def icons_only(self):
+        """Flag whether to show icons only.
+        """
+        sheet = self._propertySheet()
+        if sheet:
+            return sheet.getProperty("show_icons_only")
+    
     @property
     def action_enabled(self):
         """Validates if social bookmarks should be enabled
-           for this context using an action"""
+        for this context using an action.
+        """
         action = False
         if self.enabled:
             sheet = self._propertySheet()
@@ -80,20 +86,20 @@ class SocialBookmarksBase(object):
     @property
     def enabled(self):
         """Validates if social bookmarks should be enabled
-           for this context"""
+        for this context.
+        """
         context = aq_inner(self.context)
         sheet = self._propertySheet()
         enabled_portal_types = []
         if sheet:
             enabled_portal_types = sheet.getProperty("enabled_portal_types") or []
-
         return context.portal_type in enabled_portal_types
 
 
 class SocialBookmarksView(BrowserView, SocialBookmarksBase):
-    """ Social Bookmarks View
+    """Social Bookmarks View
     """
 
 class SocialBookmarksViewlet(ViewletBase, SocialBookmarksBase):
-    """ Social Bookmarks Viewlet
+    """Social Bookmarks Viewlet
     """

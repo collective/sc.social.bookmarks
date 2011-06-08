@@ -69,5 +69,6 @@
         <property name="bookmark_providers" type="lines" purge="False" />
         <property name="enabled_portal_types" type="lines" purge="False" />
         <property name="use_as_action" type="boolean">True</property>
+        <property name="show_icons_only" type="boolean">False</property>
     </object>
 </object>

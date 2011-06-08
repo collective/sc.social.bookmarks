@@ -57,7 +57,13 @@ msgid "Content types"
 msgstr "Inhaltstypen"
 
 msgid "Use as a content action?"
-msgstr "Als Overlay anzeigen?"
+msgstr "In Overlay anzeigen?"
 
-msgid "help_show_overlay"
+msgid "help_use_as_content_action"
 msgstr "Aktivieren Sie dieses Kästchen um die Anbieter in einem Overlay anzuzeigen."
+
+msgid "Show icons only?"
+msgstr "Nur icons anzeigen?"
+
+msgid "help_show_icons_only"
+msgstr "Aktivieren Sie dieses Kästchen um die Anbieter nur als Icon ohne Beschriftung anzuzeigen."

@@ -1,12 +1,15 @@
-.portlet .sc_social_bookmarks .bookmark_id { display:none; }
-
+.portlet .sc_social_bookmarks .bookmark_id { 
+    display:none;
+}
 #document-action-socialbookmark {
     display:block;
-    float:right; }
+    float:right;
+}
 #document-action-socialbookmark a,
 #document-action-socialbookmark a:hover,
-#document-action-socialbookmark a:visited {padding:1px;}
-
+#document-action-socialbookmark a:visited {
+    padding:1px;
+}
 #content .sc_social_bookmarks li a ,
 dl.portlet .sc_social_bookmarks li a {
     color:black;
@@ -18,12 +21,14 @@ dl.portlet .sc_social_bookmarks li a {
 #content .sc_social_bookmarks li a img {
     margin-right:5px;
 }
-
 #content .sc_social_bookmarks ul, 
 dl.portlet .sc_social_bookmarks ul { 
     list-style-image:none;
     list-style-type:none;
     margin:0;
+}
+#content .sc_social_bookmarks ul.icons_only li {
+    width:16px;
 }
 #content .sc_social_bookmarks li,
 dl.portlet .sc_social_bookmarks li {
@@ -46,4 +51,3 @@ dl.portlet .sc_social_bookmarks li {
     background:white;
     padding:5px;
 }
-

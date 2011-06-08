@@ -4,6 +4,10 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+    * Cleanup JS
+      [rnix]
+    * Add "Show Icons Only" Property to control panel and integrate into views
+      [rnix]
     * German Translation
       [rnix]
     * Plone 4.1 compatibility.
