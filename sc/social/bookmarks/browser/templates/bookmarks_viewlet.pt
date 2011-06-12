@@ -7,7 +7,7 @@
     <h4 i18n:translate="social_bookmarks_title"
         tal:condition="not:view/icons_only">Bookmark & Share</h4>
     
-    <metal:macro use-macro="context/social_bookmarks_view/macros/bookmarks" />
+    <div tal:replace="structure provider:sc.social.bookmarks.provider" />
   
   </div>  
 </div>

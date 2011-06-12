@@ -4,6 +4,8 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+    * Base bookmarks rendering with content provider instead of macro.
+      [rnix]
     * Cleanup JS
       [rnix]
     * Add "Show Icons Only" Property to control panel and integrate into views

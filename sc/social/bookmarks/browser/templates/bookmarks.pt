@@ -1,0 +1,31 @@
+<span xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="sc.social.bookmarks"
+      tal:omit-tag="">
+
+  <div class="sc_social_bookmarks"
+       tal:define="icons_only view/icons_only">
+          
+    <ul tal:define="portal_url context/@@plone_portal_state/portal_url"
+        tal:attributes="class python:icons_only and 'icons_only' or None">
+          
+      <li tal:repeat="provider view/providers">
+            
+        <a href="" tal:attributes="href provider/url">
+          <img src="" 
+               tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo};
+               alt string:${provider/id};
+               title string:${provider/id};" />
+          <span class="bookmark_id"
+                tal:condition="not:icons_only"
+                tal:content="provider/id">BOOKM</span>
+        </a>
+            
+      </li>
+    </ul>
+  </div>
+
+</span>

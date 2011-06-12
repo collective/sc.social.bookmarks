@@ -4,16 +4,40 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="sc.social.bookmarks">
 
-    <browser:page
-        for="*"
-        name="social_bookmarks_view"
-        class=".common.SocialBookmarksView"
-        allowed_attributes="enabled"
+    <!-- images -->
+    <browser:resourceDirectory
+        name="sb_images"
+        directory="sb_images"
         layer=".interfaces.ISocialBookmarksLayer"
-        template="templates/bookmarks_view.pt"
         permission="zope.Public"
         />
 
+    <!-- resources -->
+    <browser:resourceDirectory
+        name="sb_resources"
+        directory="sb_resources"
+        layer=".interfaces.ISocialBookmarksLayer"
+        permission="zope.Public"
+        />
+    
+    <!-- content provider -->
+    <adapter
+        name="sc.social.bookmarks.provider"
+        provides="zope.contentprovider.interfaces.IContentProvider"
+        factory=".common.SocialBookmarksProvider"
+        />
+
+    <!-- browser page -->
+    <browser:page
+        for="*"
+        name="social_bookmarks_view"
+        layer=".interfaces.ISocialBookmarksLayer"
+        class=".common.SocialBookmarksView"
+        template="templates/bookmarks_view.pt"
+        permission="zope.Public"
+        />
+    
+    <!-- viewlet -->
     <browser:viewlet
         name="sc.social.bookmarks"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
@@ -23,26 +47,13 @@
         permission="zope.Public"
         />
 
-    <browser:resourceDirectory
-        name="sb_images"
-        directory="sb_images"
-        layer=".interfaces.ISocialBookmarksLayer"
-        permission="zope.Public"
-        />
-
-    <browser:resourceDirectory
-        name="sb_resources"
-        directory="sb_resources"
-        layer=".interfaces.ISocialBookmarksLayer"
-        permission="zope.Public"
-        />
-
+    <!-- portlet -->
     <plone:portlet
         name="sc.social.bookmarks.sb_portlet"
-        interface=".sb_portlet.ISocialBookmarksPortlet"
-        assignment=".sb_portlet.Assignment"
-        renderer=".sb_portlet.Renderer"
-        addview=".sb_portlet.AddForm"
+        interface=".portlet.ISocialBookmarksPortlet"
+        assignment=".portlet.Assignment"
+        renderer=".portlet.Renderer"
+        addview=".portlet.AddForm"
         />
 
 </configure>

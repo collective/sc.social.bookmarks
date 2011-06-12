@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
-
 from Acquisition import aq_inner
+from Acquisition import Explicit
+from zope.interface import Interface
+from zope.interface import implements
+from zope.component import adapts
+from zope.component import getMultiAdapter
+from zope.publisher.interfaces.browser import IBrowserRequest
+from zope.publisher.interfaces.browser import IBrowserView
+from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
@@ -96,9 +104,29 @@ class SocialBookmarksBase(object):
         return context.portal_type in enabled_portal_types
 
 
-class SocialBookmarksView(BrowserView, SocialBookmarksBase):
-    """Social Bookmarks View
+class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
+    """Social Bookmarks Viewlet content provider
     """
+    
+    implements(IContentProvider)
+    adapts(Interface, IBrowserRequest, IBrowserView)
+    template = ViewPageTemplateFile(u'templates/bookmarks.pt')
+    
+    def __init__(self, context, request, view):
+        self.__parent__ = view
+        self.context = context
+        self.request = request
+    
+    def update(self): pass
+    
+    def render(self):
+        return self.template(self)
+
+
+class SocialBookmarksView(BrowserView, SocialBookmarksBase):
+    """Social Bookmarks Viewlet
+    """
+
 
 class SocialBookmarksViewlet(ViewletBase, SocialBookmarksBase):
     """Social Bookmarks Viewlet
