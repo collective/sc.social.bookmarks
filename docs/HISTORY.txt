@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2 (unreleased)
+1.2 (2011-06-13)
 ----------------
 
     * Base bookmarks rendering with content provider instead of macro.
@@ -13,9 +13,13 @@ Changelog
     * German Translation
       [rnix]
     * Plone 4.1 compatibility.
+      [rnix]
     * Add all dependencies to setup.py.
+      [rnix]
     * Zope API change: IVocabularyFactory now in zope.schema.interfaces.
+      [rnix]
     * Add migration step.
+      [rnix]
     * More cleanup.
       [thet]
 

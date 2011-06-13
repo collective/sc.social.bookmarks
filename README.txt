@@ -84,3 +84,4 @@ Contributors
     * Johannes Raggam - Refactoring, portlet and conversion to jQuery
     
     * Robert Niederreiter - This and that
+
