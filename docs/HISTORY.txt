@@ -4,7 +4,11 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+    * Adding buildout configs to test sc.social.bookmarks
+      [erico_andrei]
+
+    * Fixing Zope API change: IVocabularyFactory now in zope.schema.interfaces.
+      [erico_andrei]
 
 
 1.2 (2011-06-13)
