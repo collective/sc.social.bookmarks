@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.1 (unreleased)
+1.2.1 (2011-06-27)
 ------------------
 
     * Adding buildout configs to test sc.social.bookmarks

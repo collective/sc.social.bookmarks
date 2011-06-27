@@ -1,3 +1,6 @@
+.. contents:: Table of Contents
+   :depth: 2
+
 sc.social.bookmarks
 ===================
 
