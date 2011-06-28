@@ -22,20 +22,28 @@ Changelog
 
     * Base bookmarks rendering with content provider instead of macro.
       [rnix]
+
     * Cleanup JS
       [rnix]
+
     * Add "Show Icons Only" Property to control panel and integrate into views
       [rnix]
+
     * German Translation
       [rnix]
+
     * Plone 4.1 compatibility.
-      [rnix]
+      [thet]
+
     * Add all dependencies to setup.py.
-      [rnix]
+      [thet]
+
     * Zope API change: IVocabularyFactory now in zope.schema.interfaces.
-      [rnix]
+      [thet]
+
     * Add migration step.
-      [rnix]
+      [thet]
+
     * More cleanup.
       [thet]
 
