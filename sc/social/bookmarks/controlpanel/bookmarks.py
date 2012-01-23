@@ -19,7 +19,7 @@ from sc.social.bookmarks import _
 
 
 class MultiSelectWidget(BaseMultiSelectWidget):
-    
+
     def __init__(self, field, request):
         """Initialize the widget.
         """
@@ -28,7 +28,7 @@ class MultiSelectWidget(BaseMultiSelectWidget):
 
 
 class OrderedMultiSelectWidget(BaseOrderedMultiSelectWidget):
-    
+
     def __init__(self, field, request):
         """Initialize the widget.
         """
@@ -60,7 +60,7 @@ class IProvidersSchema(Interface):
             default=u"Check this if you want the social bookmarks to appear as an action for contents.",
         ),
     )
-    
+
     show_icons_only = Bool(
         title=_(u'Show icons only?'),
         description=_(u'help_show_icons_only',
@@ -70,7 +70,7 @@ class IProvidersSchema(Interface):
 
 
 class ProvidersControlPanelAdapter(SchemaAdapterBase):
-    
+
     adapts(IPloneSiteRoot)
     implements(IProvidersSchema)
 
@@ -86,7 +86,7 @@ class ProvidersControlPanelAdapter(SchemaAdapterBase):
 
 
 class ProvidersControlPanel(ControlPanelForm):
-    
+
     form_fields = FormFields(IProvidersSchema)
     form_fields['bookmark_providers'].custom_widget = OrderedMultiSelectWidget
     form_fields['enabled_portal_types'].custom_widget = MultiSelectWidget
