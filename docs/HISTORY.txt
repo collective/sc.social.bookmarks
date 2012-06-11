@@ -7,6 +7,8 @@ Changelog
     * Add sb_portlet module for 1.1 backwards compatibility.
       [thet]
 
+    * Conditionally include permission.cfg [ericof]
+
 
 1.2.1 (2011-06-27)
 ------------------
