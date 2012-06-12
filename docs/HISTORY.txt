@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.3 (unreleased)
+1.2.3 (2012-06-12)
 ------------------
 
     * Add a MANIFEST.in file [ericof]
