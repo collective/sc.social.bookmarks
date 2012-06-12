@@ -4,7 +4,7 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+    * Add a MANIFEST.in file [ericof]
 
 
 1.2.2 (2012-06-11)
