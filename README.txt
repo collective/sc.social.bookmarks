@@ -74,8 +74,6 @@ Development of this product was sponsored by `Simples Consultoria
 Contributors
 ------------
 
-    * Johannes Raggam - Refactoring, portlet and conversion to jQuery
-
     * Héctor Velarde - Plone 4 support, uninstall profile 
 
     * Thiago Tamosauskas (thiago at simplesconsultoria dot com dot br) - 
