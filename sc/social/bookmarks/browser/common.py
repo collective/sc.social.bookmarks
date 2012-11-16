@@ -31,7 +31,7 @@ class SocialBookmarksBase(object):
 
     @memoize
     def _availableProviders(self):
-        bookmark_providers = self.settings().bookmark_providers
+        bookmark_providers = self.settings().bookmark_providers or []
         providers=[]
         for bookmarkId in bookmark_providers:
             tmp_providers = [provider for provider in all_providers if provider.get('id', '') == bookmarkId]
@@ -72,14 +72,14 @@ class SocialBookmarksBase(object):
     def icons_only(self):
         """Flag whether to show icons only.
         """
-        return self.settings().show_icons_only
+        return self.settings().show_icons_only or False
 
     @property
     def action_enabled(self):
         """Validates if social bookmarks should be enabled
         for this context using an action.
         """
-        return self.settings().use_as_action
+        return self.settings().use_as_action or False
 
     @property
     def enabled(self):
@@ -87,7 +87,8 @@ class SocialBookmarksBase(object):
         for this context.
         """
         context = aq_inner(self.context)
-        return context.portal_type in self.settings().enabled_portal_types
+        enabled_portal_types = self.settings().enabled_portal_types or []
+        return context.portal_type in enabled_portal_types
 
 
 class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
