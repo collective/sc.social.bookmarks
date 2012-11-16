@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.3 (unreleased)
-------------------
+1.3dev (unreleased)
+-------------------
 
 - Use plone.registry instead portal_properties.
   A migration step is included to migrate old settings to the registry.
+  [thet]
+
+- Remove version.txt and define it just in setup.py.
   [thet]
 
 

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = open(os.path.join("sc", "social", "bookmarks", "version.txt")).read().strip()
+version = '1.3dev'
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.txt')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'docs', 'HISTORY.txt')).read()
 
