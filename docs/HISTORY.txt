@@ -8,6 +8,9 @@ Changelog
   A migration step is included to migrate old settings to the registry.
   [thet]
 
+- Add bookmark titles to the <a> element instead of the <img>.
+  [thet]
+
 - Sort the bookmarks provider list alphabetically.
   [thet]
 
