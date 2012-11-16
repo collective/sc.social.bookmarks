@@ -39,7 +39,7 @@ Creating a 'bookable' content type
   True
   >>> browser.url == 'http://nohost/plone/hello-world'
   True
-  
+
 Bookmarking it
 --------------
   >>> 'Bookmark' in browser.contents

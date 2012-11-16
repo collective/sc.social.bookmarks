@@ -2,7 +2,7 @@
   xmlns="http://namespaces.zope.org/zope"
   xmlns:gs="http://namespaces.zope.org/genericsetup"
   i18n_domain="sc.social.bookmarks">
-        
+
   <gs:registerProfile
       name="default"
       title="SC:Social Bookmarks"
@@ -11,7 +11,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       />
-        
+
   <gs:registerProfile
       name="uninstall"
       title="SC:Social Bookmarks uninstall"
