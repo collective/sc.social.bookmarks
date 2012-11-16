@@ -8,6 +8,9 @@ Changelog
   A migration step is included to migrate old settings to the registry.
   [thet]
 
+- Sort the bookmarks provider list alphabetically.
+  [thet]
+
 - Remove version.txt and define it just in setup.py.
   [thet]
 
