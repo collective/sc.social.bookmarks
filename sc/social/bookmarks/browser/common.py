@@ -4,15 +4,17 @@ from Acquisition import Explicit
 from zope.interface import Interface
 from zope.interface import implements
 from zope.component import adapts
+from zope.component import getUtility
 from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.contentprovider.interfaces import IContentProvider
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.CMFCore.utils import getToolByName
 from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
+from plone.registry.interfaces import IRegistry
 from sc.social.bookmarks.config import all_providers
+from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 from string import Template
 import re
 
@@ -22,18 +24,14 @@ class SocialBookmarksBase(object):
     """
 
     @memoize
-    def _propertySheet(self):
-        context = aq_inner(self.context)
-        pp = getToolByName(context,'portal_properties')
-        return getattr(pp,'sc_social_bookmarks_properties',None)
+    def settings(self):
+        controlpanel = getUtility(IRegistry).forInterface(IProvidersSchema,
+                                                 prefix="sc.social.bookmarks")
+        return controlpanel
 
     @memoize
     def _availableProviders(self):
-        sheet = self._propertySheet()
-        if sheet:
-            bookmark_providers = sheet.getProperty("bookmark_providers") or []
-        else:
-            bookmark_providers = []
+        bookmark_providers = self.settings().bookmark_providers
         providers=[]
         for bookmarkId in bookmark_providers:
             tmp_providers = [provider for provider in all_providers if provider.get('id', '') == bookmarkId]
@@ -74,33 +72,23 @@ class SocialBookmarksBase(object):
     def icons_only(self):
         """Flag whether to show icons only.
         """
-        sheet = self._propertySheet()
-        if sheet:
-            return sheet.getProperty("show_icons_only")
+        return self.settings().show_icons_only
 
     @property
     def action_enabled(self):
         """Validates if social bookmarks should be enabled
         for this context using an action.
         """
-        action = False
-        if self.enabled:
-            sheet = self._propertySheet()
-            if sheet:
-                action = sheet.getProperty("use_as_action") or False
-        return action
+        return self.settings().use_as_action
 
     @property
     def enabled(self):
         """Validates if social bookmarks should be enabled
         for this context.
         """
+        import pdb; pdb.set_trace()
         context = aq_inner(self.context)
-        sheet = self._propertySheet()
-        enabled_portal_types = []
-        if sheet:
-            enabled_portal_types = sheet.getProperty("enabled_portal_types") or []
-        return context.portal_type in enabled_portal_types
+        return context.portal_type in self.settings().enabled_portal_types
 
 
 class SocialBookmarksProvider(Explicit, SocialBookmarksBase):

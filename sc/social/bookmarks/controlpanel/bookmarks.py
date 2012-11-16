@@ -1,39 +1,12 @@
-from zope.schema import Bool
-from zope.schema import Tuple
-from zope.schema import Choice
-from zope.component import adapts
+from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
+from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.z3cform import layout
 from zope.interface import Interface
-from zope.interface import implements
-
-from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.CMFPlone.utils import getToolByName
-from Products.CMFDefault.formlib.schema import ProxyFieldProperty
-from Products.CMFDefault.formlib.schema import SchemaAdapterBase
-
-from zope.formlib.form import FormFields
-from plone.app.controlpanel.form import ControlPanelForm
-from zope.app.form.browser.itemswidgets import MultiSelectWidget as BaseMultiSelectWidget
-from zope.app.form.browser.itemswidgets import OrderedMultiSelectWidget as BaseOrderedMultiSelectWidget
+from zope.schema import Bool
+from zope.schema import Choice
+from zope.schema import Tuple
 
 from sc.social.bookmarks import _
-
-
-class MultiSelectWidget(BaseMultiSelectWidget):
-
-    def __init__(self, field, request):
-        """Initialize the widget.
-        """
-        super(MultiSelectWidget, self).__init__(field,
-            field.value_type.vocabulary, request)
-
-
-class OrderedMultiSelectWidget(BaseOrderedMultiSelectWidget):
-
-    def __init__(self, field, request):
-        """Initialize the widget.
-        """
-        super(OrderedMultiSelectWidget, self).__init__(field,
-            field.value_type.vocabulary, request)
 
 
 class IProvidersSchema(Interface):
@@ -69,29 +42,14 @@ class IProvidersSchema(Interface):
     )
 
 
-class ProvidersControlPanelAdapter(SchemaAdapterBase):
 
-    adapts(IPloneSiteRoot)
-    implements(IProvidersSchema)
+class ProvidersControlPanelEditForm(RegistryEditForm):
+    schema = IProvidersSchema
+    schema_prefix = 'sc.social.bookmarks'
 
-    def __init__(self, context):
-        super(ProvidersControlPanelAdapter, self).__init__(context)
-        portal_properties = getToolByName(context, 'portal_properties')
-        self.context = portal_properties.sc_social_bookmarks_properties
+    label = _(u'Social Bookmark Providers settings')
+    description = _(u"""Select Social Bookmarks Providers available for this
+                        site.""")
 
-    bookmark_providers = ProxyFieldProperty(IProvidersSchema['bookmark_providers'])
-    enabled_portal_types = ProxyFieldProperty(IProvidersSchema['enabled_portal_types'])
-    use_as_action = ProxyFieldProperty(IProvidersSchema['use_as_action'])
-    show_icons_only = ProxyFieldProperty(IProvidersSchema['show_icons_only'])
-
-
-class ProvidersControlPanel(ControlPanelForm):
-
-    form_fields = FormFields(IProvidersSchema)
-    form_fields['bookmark_providers'].custom_widget = OrderedMultiSelectWidget
-    form_fields['enabled_portal_types'].custom_widget = MultiSelectWidget
-
-    label = _('Social Bookmark Providers settings')
-    description = _('Select Social Bookmarks Providers available for this site.')
-    form_name = _('Providers')
-
+ProvidersControlPanel = layout.wrap_form(ProvidersControlPanelEditForm,
+                                         ControlPanelFormWrapper)

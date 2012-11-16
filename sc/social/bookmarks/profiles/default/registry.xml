@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<registry>
+
+  <records
+      interface="sc.social.bookmarks.controlpanel.bookmarks.IProvidersSchema"
+      prefix="sc.social.bookmarks"
+      />
+
+</registry>
