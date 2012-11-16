@@ -86,7 +86,6 @@ class SocialBookmarksBase(object):
         """Validates if social bookmarks should be enabled
         for this context.
         """
-        import pdb; pdb.set_trace()
         context = aq_inner(self.context)
         return context.portal_type in self.settings().enabled_portal_types
 
