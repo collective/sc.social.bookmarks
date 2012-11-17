@@ -1,8 +1,8 @@
 Changelog
-=========
+-----------
 
 1.3dev (unreleased)
--------------------
+^^^^^^^^^^^^^^^^^^^^
 
 - Use plone.registry instead portal_properties.
   A migration step is included to migrate old settings to the registry.
@@ -19,13 +19,13 @@ Changelog
 
 
 1.2.3 (2012-06-12)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Add a MANIFEST.in file [ericof]
 
 
 1.2.2 (2012-06-11)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Add sb_portlet module for 1.1 backwards compatibility.
       [thet]
@@ -34,17 +34,17 @@ Changelog
 
 
 1.2.1 (2011-06-27)
-------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Adding buildout configs to test sc.social.bookmarks
-      [erico_andrei]
+      [ericof]
 
     * Fixing Zope API change: IVocabularyFactory now in zope.schema.interfaces.
-      [erico_andrei]
+      [ericof]
 
 
 1.2 (2011-06-13)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Base bookmarks rendering with content provider instead of macro.
       [rnix]
@@ -75,7 +75,7 @@ Changelog
 
 
 1.1 (2011-01-21)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Add portlet for social bookmarks. [thet]
     * Removed KSS dependency and replace functionality with jQuery. [thet]
@@ -91,60 +91,60 @@ Changelog
 
 
 1.0 (2009-12-04)
------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Fix order of providers [lucmult]
     * Improve styles [tamosauskas]
 
 
 0.9 (2009-08-15)
------------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Moves code to svn.plone.org/svn/collective/sc.social.bookmarks/
-      [erico_andrei]
+      [ericof]
 
 
 0.8 (2009-05-18)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Fixes an annoying issue with dancing divs
       [tamosauskas]
 
 
 0.7 (2009-04-15)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Fixes string formatting error in providers without all parameters mapped
-      [erico_andrei]
+      [ericof]
     * Adds a condition to avoid displaying bookmark action on content types not
       configured to enabled it
-      [erico_andrei]
+      [ericof]
 
 
 0.6 (2009-04-07)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Support for ordering selected providers
-      [erico_andrei]
+      [ericof]
     * Improvement on Control Panel usability, using new widgets
-      [erico_andrei]
+      [ericof]
     * Adds myspace icon
       [tamosauskas]
 
 
 0.5 (2009-02-27)
-----------------
+^^^^^^^^^^^^^^^^^^^^
 
     * Initial Public Release to PyPi and Plone.org
-      [erico_andrei]
+      [ericof]
     * Very basic i18n support
-      [erico_andrei]
+      [ericof]
     * Styling and css
       [tamosauskas]
     * KSS-enabled document action
       [tamosauskas]
     * Filtering of content types
-      [erico_andrei]
+      [ericof]
     * Support for a fixed set of bookmarks providers
-      [erico_andrei]
+      [ericof]
     * Initial release
