@@ -51,7 +51,7 @@ class SocialBookmarksBase(object):
 
     @memoize
     def _availableProviders(self):
-        all_providers = self.all_providers()
+        all_providers = self._all_providers()
         bookmark_providers = self.settings().bookmark_providers or []
         providers = []
         for bookmark_id in bookmark_providers:
