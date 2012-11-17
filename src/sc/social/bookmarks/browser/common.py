@@ -11,9 +11,10 @@ from zope.interface import implements
 from zope.component import adapts
 from zope.component import getUtility
 
+from zope.contentprovider.interfaces import IContentProvider
+
 from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.publisher.interfaces.browser import IBrowserView
-from zope.contentprovider.interfaces import IContentProvider
 
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -22,36 +23,44 @@ from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
 
-from sc.social.bookmarks.config import all_providers
 from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 
 
 class SocialBookmarksBase(object):
     """Abstract Base class for social bookmarks.
     """
+    @memoize
+    def _registry():
+        return getUtility(IRegistry)
+
+    @memoize
+    def _all_providers(self):
+        ''' Return a dict with all providers '''
+        reg = self._registry()
+        providers = [reg[k] for k in reg.records.keys()
+                     if k.startswith('sc.social.bookmarks.providers')]
+        all_providers = dict([(p.get('id'), p) for p in providers])
+        return all_providers
 
     @memoize
     def settings(self):
-        registry = getUtility(IRegistry)
-        controlpanel = registry.forInterface(IProvidersSchema,
-                                             prefix="sc.social.bookmarks")
+        reg = self._registry()
+        controlpanel = reg.forInterface(IProvidersSchema,
+                                        prefix="sc.social.bookmarks")
         return controlpanel
 
     @memoize
     def _availableProviders(self):
+        all_providers = self.all_providers()
         bookmark_providers = self.settings().bookmark_providers or []
         providers = []
-        for bookmarkId in bookmark_providers:
-            tmp_providers = [provider for provider in all_providers
-                             if provider.get('id', '') == bookmarkId]
-            if not tmp_providers:
+        for bookmark_id in bookmark_providers:
+            provider = all_providers.get(bookmark_id, None)
+            if not provider:
                 continue
-            else:
-                provider = tmp_providers[0]
-
             logo = provider.get('logo', '')
             url = provider.get('url', '')
-            providers.append({'id': bookmarkId,
+            providers.append({'id': bookmark_id,
                               'logo': logo,
                               'url': url})
 
