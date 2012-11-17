@@ -30,7 +30,7 @@ class SocialBookmarksBase(object):
     """Abstract Base class for social bookmarks.
     """
     @memoize
-    def _registry():
+    def _registry(self):
         return getUtility(IRegistry)
 
     @memoize
