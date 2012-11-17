@@ -9,9 +9,9 @@ long_description = (open("README.txt").read() + "\n" +
 
 setup(name='sc.social.bookmarks',
       version=version,
-      description="Add social bookmarking and sharing capabilities to a Plone Site",
-      long_description=longdesc,
-      # Get more strings from http://www.python.org/pypi?:action=list_classifiers
+      description="""Add social bookmarking and sharing capabilities to a
+                     Plone Site""",
+      long_description=long_description,
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
