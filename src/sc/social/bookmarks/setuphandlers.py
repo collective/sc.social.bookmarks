@@ -1,10 +1,17 @@
-from Products.CMFCore.utils import getToolByName
-from plone.registry.interfaces import IRegistry
-from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
-from zope.component import getUtility
+# -*- coding: utf-8 -*-
 import logging
 
+from zope.component import getUtility
+
+from plone.registry.interfaces import IRegistry
+
+from Products.CMFCore.utils import getToolByName
+
+from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
+
+
 logger = logging.getLogger("sc.social.bookmarks")
+
 
 def removeConfiglets(context):
     """Remove configlets from the portal control panel"""
@@ -28,15 +35,17 @@ def uninstall(context):
 def upgrade_1_to_2(context):
     context.runAllImportStepsFromProfile('profile-sc.social.bookmarks:default')
 
+
 def upgrade_2_to_3(context):
     # First, make sure, the profile is applied to prepare the registry
     context.runAllImportStepsFromProfile('profile-sc.social.bookmarks:default')
 
-    controlpanel = getUtility(IRegistry).forInterface(IProvidersSchema,
-                                                 prefix="sc.social.bookmarks")
+    registry = getUtility(IRegistry)
+    controlpanel = registry.forInterface(IProvidersSchema,
+                                         prefix="sc.social.bookmarks")
 
-    props = getToolByName(context,'portal_properties')
-    sheet = getattr(props,'sc_social_bookmarks_properties',None)
+    props = getToolByName(context, 'portal_properties')
+    sheet = getattr(props, 'sc_social_bookmarks_properties', None)
 
     # Then migrate individual settings
     if sheet:
@@ -50,7 +59,8 @@ def upgrade_2_to_3(context):
 
         enabled_portal_types = sheet.getProperty("enabled_portal_types")
         controlpanel.enabled_portal_types = enabled_portal_types
-        logger.info(u"Setting enabled_portal_types migrated to plone.registry.")
+        logger.info(u"""Setting enabled_portal_types migrated
+                        to plone.registry.""")
 
         show_icons_only = sheet.getProperty("show_icons_only")
         controlpanel.show_icons_only = show_icons_only
