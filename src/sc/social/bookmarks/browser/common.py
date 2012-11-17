@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
+import re
+from string import Template
+
 from Acquisition import aq_inner
 from Acquisition import Explicit
+
 from zope.interface import Interface
 from zope.interface import implements
+
 from zope.component import adapts
 from zope.component import getUtility
+
 from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.contentprovider.interfaces import IContentProvider
+
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
 from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
+
 from sc.social.bookmarks.config import all_providers
 from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
-from string import Template
-import re
 
 
 class SocialBookmarksBase(object):
