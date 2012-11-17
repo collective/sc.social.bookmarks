@@ -123,7 +123,7 @@ class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
 
 
 class SocialBookmarksView(BrowserView, SocialBookmarksBase):
-    """Social Bookmarks Viewlet
+    """Social Bookmarks View
     """
 
 
