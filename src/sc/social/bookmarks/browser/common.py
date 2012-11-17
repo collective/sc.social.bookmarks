@@ -139,3 +139,7 @@ class SocialBookmarksView(BrowserView, SocialBookmarksBase):
 class SocialBookmarksViewlet(ViewletBase, SocialBookmarksBase):
     """Social Bookmarks Viewlet
     """
+    template = ViewPageTemplateFile('templates/bookmarks_viewlet.pt')
+
+    def render(self):
+        return self.template(self)
