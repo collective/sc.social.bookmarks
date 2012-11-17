@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from zope.interface import implements
 
 from zope.schema.interfaces import IVocabularyFactory
@@ -7,8 +8,8 @@ from zope.schema.vocabulary import SimpleTerm
 from sc.social.bookmarks.config import all_providers
 
 
-class SocialBookmarksProvidersVocabulary(object):
-    """
+class SBProvidersVocabulary(object):
+    """ Vocabulary of all available providers
     """
     implements(IVocabularyFactory)
 
@@ -18,4 +19,4 @@ class SocialBookmarksProvidersVocabulary(object):
                  for p in all_providers]
         return SimpleVocabulary(items)
 
-SocialBookmarksProvidersVocabularyFactory = SocialBookmarksProvidersVocabulary()
+SocialBookmarksProvidersVocabularyFactory = SBProvidersVocabulary()
