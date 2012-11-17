@@ -32,24 +32,28 @@ class SocialBookmarksBase(object):
 
     @memoize
     def settings(self):
-        controlpanel = getUtility(IRegistry).forInterface(IProvidersSchema,
-                                                 prefix="sc.social.bookmarks")
+        registry = getUtility(IRegistry)
+        controlpanel = registry.forInterface(IProvidersSchema,
+                                             prefix="sc.social.bookmarks")
         return controlpanel
 
     @memoize
     def _availableProviders(self):
         bookmark_providers = self.settings().bookmark_providers or []
-        providers=[]
+        providers = []
         for bookmarkId in bookmark_providers:
-            tmp_providers = [provider for provider in all_providers if provider.get('id', '') == bookmarkId]
+            tmp_providers = [provider for provider in all_providers
+                             if provider.get('id', '') == bookmarkId]
             if not tmp_providers:
                 continue
             else:
                 provider = tmp_providers[0]
 
-            logo = provider.get('logo','')
-            url = provider.get('url','')
-            providers.append({'id': bookmarkId, 'logo': logo, 'url': url})
+            logo = provider.get('logo', '')
+            url = provider.get('url', '')
+            providers.append({'id': bookmarkId,
+                              'logo': logo,
+                              'url': url})
 
         return providers
 
@@ -67,10 +71,10 @@ class SocialBookmarksBase(object):
         # BBB: Instead of using string formatting we moved to string Templates
         pattern = re.compile("\%\(([a-zA-Z]*)\)s")
         for provider in available:
-            url_tmpl = provider.get('url','').strip()
+            url_tmpl = provider.get('url', '').strip()
             if not(url_tmpl):
                 continue
-            url_tmpl = re.sub(pattern,r'${\1}',url_tmpl)
+            url_tmpl = re.sub(pattern, r'${\1}', url_tmpl)
             provider['url'] = Template(url_tmpl).safe_substitute(param)
             providers.append(provider)
         return providers
@@ -111,7 +115,8 @@ class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
         self.context = context
         self.request = request
 
-    def update(self): pass
+    def update(self):
+        pass
 
     def render(self):
         return self.template(self)
