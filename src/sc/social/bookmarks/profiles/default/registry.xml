@@ -1,9 +1,51 @@
 <?xml version="1.0"?>
 <registry>
-
-  <records
+    <records
       interface="sc.social.bookmarks.controlpanel.bookmarks.IProvidersSchema"
       prefix="sc.social.bookmarks"
       />
-
+    <record field="bookmark_providers"
+            interface="sc.social.bookmarks.controlpanel.bookmarks.IProvidersSchema"
+            name="sc.social.bookmarks.bookmark_providers">
+        <field type="plone.registry.field.Tuple">
+            <description>help_selected_providers</description>
+            <title>Bookmark providers</title>
+            <value_type type="plone.registry.field.Choice">
+                <vocabulary>plone.app.vocabularies.SocialBookmarksProviders</vocabulary>
+            </value_type>
+        </field>
+        <value>
+        </value>
+    </record>
+    <record field="enabled_portal_types"
+            interface="sc.social.bookmarks.controlpanel.bookmarks.IProvidersSchema"
+            name="sc.social.bookmarks.enabled_portal_types">
+        <field type="plone.registry.field.Tuple">
+            <description>help_portal_types</description>
+            <title>Content types</title>
+            <value_type type="plone.registry.field.Choice">
+                <vocabulary>plone.app.vocabularies.ReallyUserFriendlyTypes</vocabulary>
+            </value_type>
+        </field>
+        <value>
+        </value>
+    </record>
+    <record field="show_icons_only"
+            interface="sc.social.bookmarks.controlpanel.bookmarks.IProvidersSchema"
+            name="sc.social.bookmarks.show_icons_only">
+        <field type="plone.registry.field.Bool">
+            <description>help_show_icons_only</description>
+            <title>Show icons only?</title>
+        </field>
+        <value>False</value>
+    </record>
+    <record field="use_as_action"
+            interface="sc.social.bookmarks.controlpanel.bookmarks.IProvidersSchema"
+            name="sc.social.bookmarks.use_as_action">
+        <field type="plone.registry.field.Bool">
+            <description>help_use_as_content_action</description>
+            <title>Use as a content action?</title>
+        </field>
+        <value>False</value>
+    </record>
 </registry>
