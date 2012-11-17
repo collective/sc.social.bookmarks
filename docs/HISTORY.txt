@@ -4,18 +4,27 @@ Changelog
 1.3dev (unreleased)
 ^^^^^^^^^^^^^^^^^^^^
 
-- Use plone.registry instead portal_properties.
-  A migration step is included to migrate old settings to the registry.
-  [thet]
+    * Refactor tests to use plone.app.testing
+      [ericof]
 
-- Add bookmark titles to the <a> element instead of the <img>.
-  [thet]
+    * Support Travis-Ci
+      [ericof]
 
-- Sort the bookmarks provider list alphabetically.
-  [thet]
+    * Use plone.registry instead portal_properties.
+      A migration step is included to migrate old settings to the registry.
+      [thet]
 
-- Remove version.txt and define it just in setup.py.
-  [thet]
+    * Add bookmark titles to the <a> element instead of the <img>.
+      [thet]
+
+    * Sort the bookmarks provider list alphabetically.
+      [thet]
+
+    * Remove version.txt and define it just in setup.py.
+      [thet]
+
+    * PEP8 and PyFlakes compliancy
+      [ericof]
 
 
 1.2.3 (2012-06-12)
