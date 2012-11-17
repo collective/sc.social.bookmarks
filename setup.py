@@ -2,8 +2,10 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.3dev'
-longdesc = open(os.path.join(os.path.dirname(__file__), 'README.txt')).read()
-longdesc += open(os.path.join(os.path.dirname(__file__), 'docs', 'HISTORY.txt')).read()
+long_description = (open("README.txt").read() + "\n" +
+                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
+                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" +
+                    open(os.path.join("docs", "HISTORY.txt")).read())
 
 setup(name='sc.social.bookmarks',
       version=version,
