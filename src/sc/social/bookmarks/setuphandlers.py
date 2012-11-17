@@ -12,6 +12,8 @@ from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 
 logger = logging.getLogger("sc.social.bookmarks")
 
+profile_id = 'sc.social.bookmarks:default'
+
 
 def removeConfiglets(context):
     """Remove configlets from the portal control panel"""
@@ -34,6 +36,8 @@ def uninstall(context):
 
 def upgrade_1_to_2(context):
     context.runAllImportStepsFromProfile('profile-sc.social.bookmarks:default')
+    # This way we will be able to run other steps
+    context.setLastVersionForProfile(profile_id, u'2')
 
 
 def upgrade_2_to_3(context):
@@ -68,3 +72,5 @@ def upgrade_2_to_3(context):
 
         sheet.manage_delObjects('sc_social_bookmarks_properties')
         logger.info(u"Deleted property sheet.")
+    # This way we will be able to run other steps
+    context.setLastVersionForProfile(profile_id, u'3')
