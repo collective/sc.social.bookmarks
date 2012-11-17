@@ -48,4 +48,827 @@
         </field>
         <value>False</value>
     </record>
+
+    <!-- Providers -->
+
+    <record name="sc.social.bookmarks.providers.blinklist">
+        <field type="plone.registry.field.Dict">
+            <title>BlinkList</title>
+            <description>BlinkList</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">BlinkList</element>
+            <element key="url">http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Url=%(url)s&amp;Title=%(title)s</element>
+            <element key="logo">blinklist.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.blogmemes">
+        <field type="plone.registry.field.Dict">
+            <title>BlogMemes</title>
+            <description>BlogMemes</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">BlogMemes</element>
+            <element key="url">http://www.blogmemes.net/post.php?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">blogmemes.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.blue_dot">
+        <field type="plone.registry.field.Dict">
+            <title>Blue Dot</title>
+            <description>Blue Dot</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Blue Dot</element>
+            <element key="url">http://bluedot.us/Authoring.aspx?u=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">bluedot.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.book_mark_hu">
+        <field type="plone.registry.field.Dict">
+            <title>Book.mark.hu</title>
+            <description>Book.mark.hu</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Book.mark.hu</element>
+            <element key="url">http://book.mark.hu/bookmarks.php/?action=add&amp;address=%(url)s%2F&amp;title=%(title)s</element>
+            <element key="logo">bookmarkhu.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.bumpzee">
+        <field type="plone.registry.field.Dict">
+            <title>Bumpzee</title>
+            <description>Bumpzee</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Bumpzee</element>
+            <element key="url">http://www.bumpzee.com/bump.php?u=%(url)s</element>
+            <element key="logo">bumpzee.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.dzone">
+        <field type="plone.registry.field.Dict">
+            <title>DZone</title>
+            <description>DZone</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">DZone</element>
+            <element key="url">http://www.dzone.com/links/add.html?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">dzone.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.de_lirio_us">
+        <field type="plone.registry.field.Dict">
+            <title>De.lirio.us</title>
+            <description>De.lirio.us</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">De.lirio.us</element>
+            <element key="url">http://de.lirio.us/rubric/post?uri=%(url)s&amp;title=%(title)s&amp;when_done=go_back</element>
+            <element key="logo">delirious.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.del_icio_us">
+        <field type="plone.registry.field.Dict">
+            <title>Del.icio.us</title>
+            <description>Del.icio.us</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Del.icio.us</element>
+            <element key="url">http://del.icio.us/post?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">delicious.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.digg">
+        <field type="plone.registry.field.Dict">
+            <title>Digg</title>
+            <description>Digg</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Digg</element>
+            <element key="url">http://digg.com/submit?phase=2&amp;url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">digg.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.dotnetkicks">
+        <field type="plone.registry.field.Dict">
+            <title>DotNetKicks</title>
+            <description>DotNetKicks</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">DotNetKicks</element>
+            <element key="url">http://www.dotnetkicks.com/kick/?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">dotnetkicks.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.facebook">
+        <field type="plone.registry.field.Dict">
+            <title>Facebook</title>
+            <description>Facebook</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Facebook</element>
+            <element key="url">http://www.facebook.com/share.php?u=%(url)s</element>
+            <element key="logo">facebook.jpg</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.fark">
+        <field type="plone.registry.field.Dict">
+            <title>Fark</title>
+            <description>Fark</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Fark</element>
+            <element key="url">http://cgi.fark.com/cgi/fark/edit.pl?new_url=%(url)s&amp;new_comment=%(title)s&amp;new_comment=&amp;linktype=Misc</element>
+            <element key="logo">fark.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.fleck">
+        <field type="plone.registry.field.Dict">
+            <title>Fleck</title>
+            <description>Fleck</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Fleck</element>
+            <element key="url">http://extension.fleck.com/?v=b.0.804&amp;url=%(url)s</element>
+            <element key="logo">fleck.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.furl">
+        <field type="plone.registry.field.Dict">
+            <title>Furl</title>
+            <description>Furl</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Furl</element>
+            <element key="url">http://www.furl.net/storeIt.jsp?u=%(url)s&amp;t=%(title)s</element>
+            <element key="logo">furl.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.google_bookmarks">
+        <field type="plone.registry.field.Dict">
+            <title>Google Bookmarks</title>
+            <description>Google Bookmarks</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Google Bookmarks</element>
+            <element key="url">http://www.google.com/bookmarks/mark?op=add&amp;bkmk=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">google.jpg</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.gwar">
+        <field type="plone.registry.field.Dict">
+            <title>Gwar</title>
+            <description>Gwar</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Gwar</element>
+            <element key="url">http://www.gwar.pl/DodajGwar.html?u=%(url)s</element>
+            <element key="logo">gwar.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.haohao">
+        <field type="plone.registry.field.Dict">
+            <title>Haohao</title>
+            <description>Haohao</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Haohao</element>
+            <element key="url">http://www.haohaoreport.com/submit.php?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">haohao.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.hemidemi">
+        <field type="plone.registry.field.Dict">
+            <title>Hemidemi</title>
+            <description>Hemidemi</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Hemidemi</element>
+            <element key="url">http://www.hemidemi.com/user_bookmark/new?title=%(title)s&amp;url=%(url)s</element>
+            <element key="logo">hemidemi.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.indiagram">
+        <field type="plone.registry.field.Dict">
+            <title>IndiaGram</title>
+            <description>IndiaGram</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">IndiaGram</element>
+            <element key="url">http://www.indiagram.com/mock/bookmarks/desitrain?action=add&amp;address=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">indiagram.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.indianpad">
+        <field type="plone.registry.field.Dict">
+            <title>IndianPad</title>
+            <description>IndianPad</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">IndianPad</element>
+            <element key="url">http://www.indianpad.com/submit.php?url=%(url)s</element>
+            <element key="logo">indianpad.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.internetmedia">
+        <field type="plone.registry.field.Dict">
+            <title>Internetmedia</title>
+            <description>Internetmedia</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Internetmedia</element>
+            <element key="url">http://internetmedia.hu/submit.php?url=%(url)s</element>
+            <element key="logo">im.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.linkagogo">
+        <field type="plone.registry.field.Dict">
+            <title>LinkaGoGo</title>
+            <description>LinkaGoGo</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">LinkaGoGo</element>
+            <element key="url">http://www.linkagogo.com/go/AddNoPopup?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">linkagogo.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.linkter">
+        <field type="plone.registry.field.Dict">
+            <title>Linkter</title>
+            <description>Linkter</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Linkter</element>
+            <element key="url">http://www.linkter.hu/index.php?action=suggest_link&amp;url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">linkter.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.live">
+        <field type="plone.registry.field.Dict">
+            <title>Live</title>
+            <description>Live</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Live</element>
+            <element key="url">https://favorites.live.com/quickadd.aspx?marklet=1&amp;mkt=en-us&amp;url=%(url)s&amp;title=%(title)s&amp;top=1</element>
+            <element key="logo">live.jpg</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.ma_gnolia">
+        <field type="plone.registry.field.Dict">
+            <title>Ma.gnolia</title>
+            <description>Ma.gnolia</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Ma.gnolia</element>
+            <element key="url">http://ma.gnolia.com/bookmarklet/add?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">magnolia.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.misterwong">
+        <field type="plone.registry.field.Dict">
+            <title>MisterWong</title>
+            <description>MisterWong</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">MisterWong</element>
+            <element key="url">http://www.mister-wong.com/addurl/?bm_url=%(url)s&amp;bm_description=%(title)s&amp;plugin=soc</element>
+            <element key="logo">misterwong.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.myshare">
+        <field type="plone.registry.field.Dict">
+            <title>MyShare</title>
+            <description>MyShare</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">MyShare</element>
+            <element key="url">http://myshare.url.com.tw/index.php?func=newurl&amp;url=%(url)s&amp;desc=%(title)s</element>
+            <element key="logo">myshare.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.myspace">
+        <field type="plone.registry.field.Dict">
+            <title>MySpace</title>
+            <description>MySpace</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">MySpace</element>
+            <element key="url">http://www.myspace.com/Modules/PostTo/Pages/?c=%(url)s&amp;t=%(title)s</element>
+            <element key="logo">myspace.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.netscape">
+        <field type="plone.registry.field.Dict">
+            <title>Netscape</title>
+            <description>Netscape</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Netscape</element>
+            <element key="url">http://www.netscape.com/submit/?U=%(url)s&amp;T=%(title)s</element>
+            <element key="logo">netscape.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.netvouz">
+        <field type="plone.registry.field.Dict">
+            <title>Netvouz</title>
+            <description>Netvouz</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Netvouz</element>
+            <element key="url">http://www.netvouz.com/action/submitBookmark?url=%(url)s&amp;title=%(title)s&amp;popup=no</element>
+            <element key="logo">netvouz.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.newsvine">
+        <field type="plone.registry.field.Dict">
+            <title>NewsVine</title>
+            <description>NewsVine</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">NewsVine</element>
+            <element key="url">http://www.newsvine.com/_tools/seed&amp;save?u=%(url)s&amp;h=%(title)s</element>
+            <element key="logo">newsvine.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.plugim">
+        <field type="plone.registry.field.Dict">
+            <title>PlugIM</title>
+            <description>PlugIM</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">PlugIM</element>
+            <element key="url">http://www.plugim.com/submit?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">plugim.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.popcurrent">
+        <field type="plone.registry.field.Dict">
+            <title>PopCurrent</title>
+            <description>PopCurrent</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">PopCurrent</element>
+            <element key="url">http://popcurrent.com/submit?url=%(url)s&amp;title=%(title)s&amp;rss=</element>
+            <element key="logo">popcurrent.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.rawsugar">
+        <field type="plone.registry.field.Dict">
+            <title>RawSugar</title>
+            <description>RawSugar</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">RawSugar</element>
+            <element key="url">http://www.rawsugar.com/tagger/?turl=%(url)s&amp;tttl=%(title)s</element>
+            <element key="logo">rawsugar.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.rec6">
+        <field type="plone.registry.field.Dict">
+            <title>Rec6</title>
+            <description>Rec6</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Rec6</element>
+            <element key="url">http://www.syxt.com.br/rec6/link.php?url=%(url)s&amp;=%(title)s</element>
+            <element key="logo">rec6.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.reddit">
+        <field type="plone.registry.field.Dict">
+            <title>Reddit</title>
+            <description>Reddit</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Reddit</element>
+            <element key="url">http://reddit.com/submit?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">reddit.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.scoopeo">
+        <field type="plone.registry.field.Dict">
+            <title>Scoopeo</title>
+            <description>Scoopeo</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Scoopeo</element>
+            <element key="url">http://www.scoopeo.com/scoop/new?newurl=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">scoopeo.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.shadows">
+        <field type="plone.registry.field.Dict">
+            <title>Shadows</title>
+            <description>Shadows</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Shadows</element>
+            <element key="url">http://www.shadows.com/features/tcr.htm?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">shadows.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.simpy">
+        <field type="plone.registry.field.Dict">
+            <title>Simpy</title>
+            <description>Simpy</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Simpy</element>
+            <element key="url">http://www.simpy.com/simpy/LinkAdd.do?href=%(url)s&amp;title=%(title)s&amp;src=sociable-</element>
+            <element key="logo">simpy.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.slashdot">
+        <field type="plone.registry.field.Dict">
+            <title>Slashdot</title>
+            <description>Slashdot</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Slashdot</element>
+            <element key="url">http://slashdot.org/bookmark.pl?title=%(title)s&amp;url=%(url)s</element>
+            <element key="logo">slashdot.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.smarking">
+        <field type="plone.registry.field.Dict">
+            <title>Smarking</title>
+            <description>Smarking</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Smarking</element>
+            <element key="url">http://smarking.com/editbookmark/?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">smarking.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.sphereit">
+        <field type="plone.registry.field.Dict">
+            <title>SphereIt</title>
+            <description>SphereIt</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">SphereIt</element>
+            <element key="url">http://www.sphere.com/search?q=sphereit:%(url)s&amp;title=%(title)s</element>
+            <element key="logo">sphere.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.spurl">
+        <field type="plone.registry.field.Dict">
+            <title>Spurl</title>
+            <description>Spurl</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Spurl</element>
+            <element key="url">http://www.spurl.net/spurl.php?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">spurl.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.stumbleupon">
+        <field type="plone.registry.field.Dict">
+            <title>StumbleUpon</title>
+            <description>StumbleUpon</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">StumbleUpon</element>
+            <element key="url">http://www.stumbleupon.com/url/%(url)s</element>
+            <element key="logo">stumbleupon.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.taggly">
+        <field type="plone.registry.field.Dict">
+            <title>Taggly</title>
+            <description>Taggly</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Taggly</element>
+            <element key="url">http://taggly.com/bookmarks.php/pass?action=add&amp;address=</element>
+            <element key="logo">taggly.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.tailrank">
+        <field type="plone.registry.field.Dict">
+            <title>TailRank</title>
+            <description>TailRank</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">TailRank</element>
+            <element key="url">http://tailrank.com/share/?text=&amp;link_href=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">tailrank.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.technorati">
+        <field type="plone.registry.field.Dict">
+            <title>Technorati</title>
+            <description>Technorati</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Technorati</element>
+            <element key="url">http://technorati.com/faves?add=%(url)s</element>
+            <element key="logo">technorati.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.thisnext">
+        <field type="plone.registry.field.Dict">
+            <title>ThisNext</title>
+            <description>ThisNext</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">ThisNext</element>
+            <element key="url">http://www.thisnext.com/pick/new/submit/sociable/?url=%(url)s&amp;name=%(title)s</element>
+            <element key="logo">thisnext.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.twitter">
+        <field type="plone.registry.field.Dict">
+            <title>Twitter</title>
+            <description>Twitter</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Twitter</element>
+            <element key="url">http://twitter.com/home?status=%(url)s</element>
+            <element key="logo">twitter.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.webride">
+        <field type="plone.registry.field.Dict">
+            <title>Webride</title>
+            <description>Webride</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Webride</element>
+            <element key="url">http://webride.org/discuss/split.php?uri=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">webride.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.wists">
+        <field type="plone.registry.field.Dict">
+            <title>Wists</title>
+            <description>Wists</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Wists</element>
+            <element key="url">http://wists.com/s.php?c=&amp;r=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">wists.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.wykop">
+        <field type="plone.registry.field.Dict">
+            <title>Wykop</title>
+            <description>Wykop</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Wykop</element>
+            <element key="url">http://www.wykop.pl/dodaj?url=%(url)s</element>
+            <element key="logo">wykop.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.yahoo_bookmarks">
+        <field type="plone.registry.field.Dict">
+            <title>Yahoo Bookmarks</title>
+            <description>Yahoo Bookmarks</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">Yahoo Bookmarks</element>
+            <element key="url">http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u=%(url)s&amp;t=%(title)s</element>
+            <element key="logo">my_yahoo.jpg</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.yahoobuzz">
+        <field type="plone.registry.field.Dict">
+            <title>YahooBuzz</title>
+            <description>YahooBuzz</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">YahooBuzz</element>
+            <element key="url">http://buzz.yahoo.com/submit/?submitUrl=%(url)s&amp;submitHeadline=%(title)s</element>
+            <element key="logo">yahoo-buzz.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.blinkbits">
+        <field type="plone.registry.field.Dict">
+            <title>blinkbits</title>
+            <description>blinkbits</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">blinkbits</element>
+            <element key="url">http://www.blinkbits.com/bookmarklets/save.php?v=1&amp;source_url=%(url)s&amp;title=%(title)s&amp;body=%(title)s</element>
+            <element key="logo">blinkbits.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.blogmarks">
+        <field type="plone.registry.field.Dict">
+            <title>blogmarks</title>
+            <description>blogmarks</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">blogmarks</element>
+            <element key="url">http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">blogmarks.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.blogtercimlap">
+        <field type="plone.registry.field.Dict">
+            <title>blogtercimlap</title>
+            <description>blogtercimlap</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">blogtercimlap</element>
+            <element key="url">http://cimlap.blogter.hu/index.php?action=suggest_link&amp;title=%(title)s&amp;url=%(url)s</element>
+            <element key="logo">blogter.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.co_mments">
+        <field type="plone.registry.field.Dict">
+            <title>co.mments</title>
+            <description>co.mments</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">co.mments</element>
+            <element key="url">http://co.mments.com/track?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">co.mments.gif</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.connotea">
+        <field type="plone.registry.field.Dict">
+            <title>connotea</title>
+            <description>connotea</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">connotea</element>
+            <element key="url">http://www.connotea.org/addpopup?continue=confirm&amp;uri=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">connotea.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.feedmelinks">
+        <field type="plone.registry.field.Dict">
+            <title>feedmelinks</title>
+            <description>feedmelinks</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">feedmelinks</element>
+            <element key="url">http://feedmelinks.com/categorize?from=toolbar&amp;op=submit&amp;url=%(url)s&amp;name=%(title)s</element>
+            <element key="logo">feedmelinks.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.kick_ie">
+        <field type="plone.registry.field.Dict">
+            <title>kick.ie</title>
+            <description>kick.ie</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">kick.ie</element>
+            <element key="url">http://kick.ie/submit/?url=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">kickit.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.ppnow">
+        <field type="plone.registry.field.Dict">
+            <title>ppnow</title>
+            <description>ppnow</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">ppnow</element>
+            <element key="url">http://www.ppnow.net/submit.php?url=%(url)s</element>
+            <element key="logo">ppnow.png</element>
+        </value>
+    </record>
+    <record name="sc.social.bookmarks.providers.scuttle">
+        <field type="plone.registry.field.Dict">
+            <title>scuttle</title>
+            <description>scuttle</description>
+            <key_type type="plone.registry.field.TextLine" />
+            <value_type type="plone.registry.field.TextLine" />
+        </field>
+        <value>
+            <element key="id">scuttle</element>
+            <element key="url">http://www.scuttle.org/bookmarks.php/maxpower?action=add&amp;address=%(url)s&amp;title=%(title)s</element>
+            <element key="logo">scuttle.png</element>
+        </value>
+    </record>
+
 </registry>
