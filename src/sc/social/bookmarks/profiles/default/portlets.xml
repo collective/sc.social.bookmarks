@@ -5,6 +5,8 @@
   <portlet
     addview="sc.social.bookmarks.sb_portlet"
     title = "Social Bookmarks Portlet"
-    description = "Add a social bookmarks portlet."
-    />
+    description = "Add a social bookmarks portlet.">
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+    <for interface="plone.app.portlets.interfaces.IDashboard" />
+   </portlet>
 </portlets>
