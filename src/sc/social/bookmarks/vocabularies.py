@@ -1,9 +1,6 @@
 from zope.interface import implements
 
-try:
-    from zope.schema.interfaces import IVocabularyFactory
-except ImportError:
-    from zope.app.schema.vocabulary import IVocabularyFactory
+from zope.schema.interfaces import IVocabularyFactory
 
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
