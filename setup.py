@@ -55,6 +55,18 @@ setup(name='sc.social.bookmarks',
           'zope.interface',
           'zope.schema',
       ],
+      extras_require={
+          'develop': [
+              'Sphinx',
+              'manuel',
+              'pep8',
+              'setuptools-flakes',
+          ],
+          'test': [
+              'interlude',
+              'plone.app.testing'
+          ]
+      },
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
