@@ -1,79 +1,77 @@
 import unittest
 
-from Products.PloneTestCase.ptc import PloneTestCase
+from plone.browserlayer.utils import registered_layers
+
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 
 from sc.social.bookmarks.config import PROJECTNAME
-from sc.social.bookmarks.tests.layer import SocialBookmarksLayer
+from sc.social.bookmarks.testing import INTEGRATION_TESTING
 
-STYLESHEETS = (
+CSS = (
     '++resource++sb_resources/social_bookmark.css',
-    )
+)
 
-JAVASCRIPTS = (
+JS = (
     '++resource++sb_resources/social_bookmarks_overlay.js',
-    )
+)
 
 CONFIGLETS = (
     'socialbookmarks',
-    )
+)
 
-class InstallTest(PloneTestCase):
 
-    layer = SocialBookmarksLayer
+class InstallTestCase(unittest.TestCase):
 
-    def test_stylesheets(self):
-        for css in STYLESHEETS:
-            self.failUnless(css in self.portal.portal_css.getResourceIds(), '%s stylesheet not installed' % css)
+    layer = INTEGRATION_TESTING
 
-    def test_javascripts(self):
-        for js in JAVASCRIPTS:
-            self.failUnless(js in self.portal.portal_javascripts.getResourceIds(), '%s javascript not installed' % js)
+    def setUp(self):
+        self.portal = self.layer['portal']
 
-    def test_configlets(self):
-        installed = [a.getAction(self)['id'] for a in self.portal.portal_controlpanel.listActions()]
-        for c in CONFIGLETS:
-            self.failUnless(c in installed, '%s configlet not installed' % c)
+    def test_installed(self):
+        qi = getattr(self.portal, 'portal_quickinstaller')
+        self.assertTrue(qi.isProductInstalled(PROJECTNAME))
 
-    def test_actions(self):
-        #self.fail('To be implemented...')
-        pass
+    def test_addon_layer(self):
+        layers = [l.getName() for l in registered_layers()]
+        self.assertTrue('ISocialBookmarksLayer' in layers,
+                        'add-on layer was not installed')
 
-    def test_viewlets(self):
-        #self.fail('To be implemented...')
-        pass
+    def test_jsregistry(self):
+        resource_ids = self.portal.portal_javascripts.getResourceIds()
+        for id in JS:
+            self.assertTrue(id in resource_ids, '%s not installed' % id)
 
-class UninstallTest(PloneTestCase):
+    def test_cssregistry(self):
+        resource_ids = self.portal.portal_css.getResourceIds()
+        for id in CSS:
+            self.assertTrue(id in resource_ids, '%s not installed' % id)
 
-    layer = SocialBookmarksLayer
 
-    def afterSetUp(self):
+class UninstallTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.qi = getattr(self.portal, 'portal_quickinstaller')
         self.qi.uninstallProducts(products=[PROJECTNAME])
 
-    def test_product_uninstall(self):
-        self.failIf(self.qi.isProductInstalled(PROJECTNAME))
+    def test_uninstalled(self):
+        self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
 
-    def test_stylesheets(self):
-        for css in STYLESHEETS:
-            self.failIf(css in self.portal.portal_css.getResourceIds(), '%s stylesheet not installed' % css)
+    def test_addon_layer_removed(self):
+        layers = [l.getName() for l in registered_layers()]
+        self.assertTrue('ICoverLayer' not in layers,
+                        'add-on layer was not removed')
 
-    def test_javascripts(self):
-        for js in JAVASCRIPTS:
-            self.failIf(js in self.portal.portal_javascripts.getResourceIds(), '%s javascript not installed' % js)
+    def test_jsregistry_removed(self):
+        resource_ids = self.portal.portal_javascripts.getResourceIds()
+        for id in JS:
+            self.assertTrue(id not in resource_ids, '%s not removed' % id)
 
-    def test_configlets(self):
-        installed = [a.getAction(self)['id'] for a in self.portal.portal_controlpanel.listActions()]
-        for c in CONFIGLETS:
-            self.failIf(c in installed, '%s configlet not uninstalled' % c)
-
-    def test_actions(self):
-        #self.fail('To be implemented...')
-        pass
-
-    def test_viewlets(self):
-        #self.fail('To be implemented...')
-        pass
-
-def test_suite():
-    return unittest.defaultTestLoader.loadTestsFromName(__name__)
-
+    def test_cssregistry_removed(self):
+        resource_ids = self.portal.portal_css.getResourceIds()
+        for id in CSS:
+            self.assertTrue(id not in resource_ids, '%s not removed' % id)
