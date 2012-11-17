@@ -34,8 +34,10 @@ class SBProvidersVocabulary(object):
 
     def __call__(self, context=None):
         reg = getUtility(IRegistry)
-        providers = [reg[k] for k in reg.records.keys()
-                     if k.startswith('sc.social.bookmarks.providers')]
+        providers_keys = [k for k in reg.records.keys()
+                          if k.startswith('sc.social.bookmarks.providers')]
+        providers_keys.sort()
+        providers = [reg[k] for k in providers_keys]
         items = [SimpleTerm(p.get('id'), p.get('id'), p.get('id'))
                  for p in providers]
         return SimpleVocabulary(items)
