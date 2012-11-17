@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<object name="portal_properties">
+    <object meta_type="Plone Property Sheet" name="sc_social_bookmarks_properties">
+        <property name="all_providers" purge="true" type="lines">
+            <element value="Del.icio.us|http://del.icio.us/post?url=%(url)s&amp;title=%(title)s|delicious.png"/>
+            <element value="Facebook|http://www.facebook.com/share.php?u=%(url)s|facebook.jpg"/>
+            <element value="Google Bookmarks|http://www.google.com/bookmarks/mark?op=add&amp;bkmk=%(url)s&amp;title=%(title)s|google.jpg"/>
+            <element value="Live|https://favorites.live.com/quickadd.aspx?marklet=1&amp;mkt=en-us&amp;url=%(url)s&amp;title=%(title)s&amp;top=1|live.jpg"/>
+            <element value="Yahoo Bookmarks|http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u=%(url)s&amp;t=%(title)s|my_yahoo.jpg"/>
+            <element value="Technorati|http://technorati.com/faves?add=%(url)s|technorati.png"/>
+            <element value="Twitter|http://twitter.com/home?status=%(url)s|twitter.gif"/>
+            <element value="MySpace|http://www.myspace.com/Modules/PostTo/Pages/?c=%(url)s&amp;t=%(title)s|myspace.png"/>
+            <element value="blinkbits|http://www.blinkbits.com/bookmarklets/save.php?v=1&amp;source_url=%(url)s&amp;title=%(title)s&amp;body=%(title)s|blinkbits.png"/>
+            <element value="BlinkList|http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Url=%(url)s&amp;Title=%(title)s|blinklist.png"/>
+            <element value="BlogMemes|http://www.blogmemes.net/post.php?url=%(url)s&amp;title=%(title)s|blogmemes.png"/>
+            <element value="blogmarks|http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=%(url)s&amp;title=%(title)s|blogmarks.png"/>
+            <element value="blogtercimlap|http://cimlap.blogter.hu/index.php?action=suggest_link&amp;title=%(title)s&amp;url=%(url)s|blogter.png"/>
+            <element value="Blue Dot|http://bluedot.us/Authoring.aspx?u=%(url)s&amp;title=%(title)s|bluedot.png"/>
+            <element value="Book.mark.hu|http://book.mark.hu/bookmarks.php/?action=add&amp;address=%(url)s%2F&amp;title=%(title)s|bookmarkhu.png"/>
+            <element value="Bumpzee|http://www.bumpzee.com/bump.php?u=%(url)s|bumpzee.png"/>
+            <element value="co.mments|http://co.mments.com/track?url=%(url)s&amp;title=%(title)s|co.mments.gif"/>
+            <element value="connotea|http://www.connotea.org/addpopup?continue=confirm&amp;uri=%(url)s&amp;title=%(title)s|connotea.png"/>
+            <element value="De.lirio.us|http://de.lirio.us/rubric/post?uri=%(url)s&amp;title=%(title)s&amp;when_done=go_back|delirious.png"/>
+            <element value="Digg|http://digg.com/submit?phase=2&amp;url=%(url)s&amp;title=%(title)s|digg.png"/>
+            <element value="DotNetKicks|http://www.dotnetkicks.com/kick/?url=%(url)s&amp;title=%(title)s|dotnetkicks.png"/>
+            <element value="DZone|http://www.dzone.com/links/add.html?url=%(url)s&amp;title=%(title)s|dzone.png"/>
+            <element value="Fark|http://cgi.fark.com/cgi/fark/edit.pl?new_url=%(url)s&amp;new_comment=%(title)s&amp;new_comment=&amp;linktype=Misc|fark.png"/>
+            <element value="feedmelinks|http://feedmelinks.com/categorize?from=toolbar&amp;op=submit&amp;url=%(url)s&amp;name=%(title)s|feedmelinks.png"/>
+            <element value="Furl|http://www.furl.net/storeIt.jsp?u=%(url)s&amp;t=%(title)s|furl.png"/>
+            <element value="Fleck|http://extension.fleck.com/?v=b.0.804&amp;url=%(url)s|fleck.gif"/>
+            <element value="Gwar|http://www.gwar.pl/DodajGwar.html?u=%(url)s|gwar.gif"/>
+            <element value="Haohao|http://www.haohaoreport.com/submit.php?url=%(url)s&amp;title=%(title)s|haohao.png"/>
+            <element value="Hemidemi|http://www.hemidemi.com/user_bookmark/new?title=%(title)s&amp;url=%(url)s|hemidemi.png"/>
+            <element value="IndiaGram|http://www.indiagram.com/mock/bookmarks/desitrain?action=add&amp;address=%(url)s&amp;title=%(title)s|indiagram.png"/>
+            <element value="IndianPad|http://www.indianpad.com/submit.php?url=%(url)s|indianpad.png"/>
+            <element value="Internetmedia|http://internetmedia.hu/submit.php?url=%(url)s|im.png"/>
+            <element value="kick.ie|http://kick.ie/submit/?url=%(url)s&amp;title=%(title)s|kickit.png"/>
+            <element value="LinkaGoGo|http://www.linkagogo.com/go/AddNoPopup?url=%(url)s&amp;title=%(title)s|linkagogo.png"/>
+            <element value="Linkter|http://www.linkter.hu/index.php?action=suggest_link&amp;url=%(url)s&amp;title=%(title)s|linkter.png"/>
+            <element value="Ma.gnolia|http://ma.gnolia.com/bookmarklet/add?url=%(url)s&amp;title=%(title)s|magnolia.png"/>
+            <element value="MisterWong|http://www.mister-wong.com/addurl/?bm_url=%(url)s&amp;bm_description=%(title)s&amp;plugin=soc|misterwong.gif"/>
+            <element value="MyShare|http://myshare.url.com.tw/index.php?func=newurl&amp;url=%(url)s&amp;desc=%(title)s|myshare.png"/>
+            <element value="NewsVine|http://www.newsvine.com/_tools/seed&amp;save?u=%(url)s&amp;h=%(title)s|newsvine.png"/>
+            <element value="Netscape|http://www.netscape.com/submit/?U=%(url)s&amp;T=%(title)s|netscape.gif"/>
+            <element value="Netvouz|http://www.netvouz.com/action/submitBookmark?url=%(url)s&amp;title=%(title)s&amp;popup=no|netvouz.png"/>
+            <element value="PlugIM|http://www.plugim.com/submit?url=%(url)s&amp;title=%(title)s|plugim.png"/>
+            <element value="PopCurrent|http://popcurrent.com/submit?url=%(url)s&amp;title=%(title)s&amp;rss=|popcurrent.png"/>
+            <element value="ppnow|http://www.ppnow.net/submit.php?url=%(url)s|ppnow.png"/>
+            <element value="RawSugar|http://www.rawsugar.com/tagger/?turl=%(url)s&amp;tttl=%(title)s|rawsugar.png"/>
+            <element value="Rec6|http://www.syxt.com.br/rec6/link.php?url=%(url)s&amp;=%(title)s|rec6.gif"/>
+            <element value="Reddit|http://reddit.com/submit?url=%(url)s&amp;title=%(title)s|reddit.png"/>
+            <element value="Scoopeo|http://www.scoopeo.com/scoop/new?newurl=%(url)s&amp;title=%(title)s|scoopeo.png"/>
+            <element value="scuttle|http://www.scuttle.org/bookmarks.php/maxpower?action=add&amp;address=%(url)s&amp;title=%(title)s|scuttle.png"/>
+            <element value="Shadows|http://www.shadows.com/features/tcr.htm?url=%(url)s&amp;title=%(title)s|shadows.png"/>
+            <element value="Simpy|http://www.simpy.com/simpy/LinkAdd.do?href=%(url)s&amp;title=%(title)s&amp;src=sociable-|simpy.png"/>
+            <element value="Slashdot|http://slashdot.org/bookmark.pl?title=%(title)s&amp;url=%(url)s|slashdot.png"/>
+            <element value="Smarking|http://smarking.com/editbookmark/?url=%(url)s&amp;title=%(title)s|smarking.png"/>
+            <element value="Spurl|http://www.spurl.net/spurl.php?url=%(url)s&amp;title=%(title)s|spurl.png"/>
+            <element value="SphereIt|http://www.sphere.com/search?q=sphereit:%(url)s&amp;title=%(title)s|sphere.png"/>
+            <element value="StumbleUpon|http://www.stumbleupon.com/url/%(url)s|stumbleupon.png"/>
+            <element value="Taggly|http://taggly.com/bookmarks.php/pass?action=add&amp;address=|taggly.png"/>
+            <element value="TailRank|http://tailrank.com/share/?text=&amp;link_href=%(url)s&amp;title=%(title)s|tailrank.png"/>
+            <element value="ThisNext|http://www.thisnext.com/pick/new/submit/sociable/?url=%(url)s&amp;name=%(title)s|thisnext.png"/>
+            <element value="Webride|http://webride.org/discuss/split.php?uri=%(url)s&amp;title=%(title)s|webride.png"/>
+            <element value="Wists|http://wists.com/s.php?c=&amp;r=%(url)s&amp;title=%(title)s|wists.png"/>
+            <element value="Wykop|http://www.wykop.pl/dodaj?url=%(url)s|wykop.gif"/>
+            <element value="YahooBuzz|http://buzz.yahoo.com/submit/?submitUrl=%(url)s&amp;submitHeadline=%(title)s|yahoo-buzz.png"/>
+        </property>
+        <property name="bookmark_providers" purge="False" type="lines">
+            <element value="Reddit"/>
+            <element value="Twitter"/>
+        </property>
+        <property name="enabled_portal_types" purge="False" type="lines">
+            <element value="Document"/>
+        </property>
+        <property name="use_as_action" type="boolean">True</property>
+        <property name="show_icons_only" type="boolean">False</property>
+    </object>
+</object>
