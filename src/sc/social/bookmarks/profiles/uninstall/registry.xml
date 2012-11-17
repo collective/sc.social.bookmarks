@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<registry>
+     <record name="sc.social.bookmarks.bookmark_providers" delete="true" />
+     <record name="sc.social.bookmarks.enabled_portal_types" delete="true" />
+     <record name="sc.social.bookmarks.show_icons_only" delete="true" />
+     <record name="sc.social.bookmarks.use_as_action" delete="true" />
+</registry>
