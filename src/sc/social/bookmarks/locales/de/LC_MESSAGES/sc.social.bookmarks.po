@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sc.social.bookmarks\n"
-"POT-Creation-Date: 2009-02-27 17:49+0000\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "PO-Revision-Date: 2010-10-15 18:37-0400\n"
 "Last-Translator: Robert Niederreiter <rnix@squarewave.at>\n"
 "Language-Team: German <plone-conosur@lists.plone.org>\n"
@@ -17,53 +17,65 @@ msgstr ""
 "Domain: sc.social.bookmarks\n"
 "X-Is-Fallback-For: de-de de-at de-ch\n"
 
-#. Default: "Bookmark & Share:"
-#: ../browser/templates/bookmarks.pt:5
-msgid "Bookmark & Share:"
-msgstr "Lesezeichen & verteilen:"
+#: sc/social/bookmarks/browser/portlet.py:28
+msgid "Add a social bookmarks portlet"
+msgstr ""
 
-#: ../controlpanel/bookmarks.py:61
-msgid "Providers"
-msgstr "Anbieter"
+#: sc/social/bookmarks/controlpanel/bookmarks.py:22
+msgid "Bookmark providers"
+msgstr "Social Media Anbieter"
 
-#: ../controlpanel/bookmarks.py:60
-msgid "Select Social Bookmarks Providers available for this site."
-msgstr "Wählen Sie die Social Media Anbieter welche in dieser Seite verfügbar sein sollen."
+#: sc/social/bookmarks/controlpanel/bookmarks.py:30
+msgid "Content types"
+msgstr "Inhaltstypen"
 
-#: ../controlpanel/bookmarks.py:59
+#: sc/social/bookmarks/controlpanel/bookmarks.py:45
+msgid "Show icons only?"
+msgstr "Nur icons anzeigen?"
+
+#: sc/social/bookmarks/controlpanel/bookmarks.py:56
 msgid "Social Bookmark Providers settings"
 msgstr "Social Media Anbieter Einstellungen"
 
 #. Default: "Social Bookmarks"
-#: ../profiles/default/actionicons.xml
-#: ../profiles/default/controlpanel.xml
+#: sc/social/bookmarks/profiles/default/controlpanel.xml
 msgid "Social Bookmarks"
 msgstr "Social Bookmarks"
 
+#: sc/social/bookmarks/browser/portlet.py:23
+msgid "Social Bookmarks Portlet"
+msgstr ""
+
+#: sc/social/bookmarks/browser/portlet.py:29
+msgid "This portlet shows links to other sites, where the current content can be posted to."
+msgstr ""
+
+#: sc/social/bookmarks/controlpanel/bookmarks.py:38
+msgid "Use as a content action?"
+msgstr "In Overlay anzeigen?"
+
 #. Default: "Please select content types in which the viewlet will be applied."
-#: ../controlpanel/bookmarks.py:34
+#: sc/social/bookmarks/controlpanel/bookmarks.py:31
 msgid "help_portal_types"
 msgstr "Bitte wählen Sie die Inhaltstypen für die Social Bookmark links angezeigt werden sollen."
 
 #. Default: "Please check any provider you want to be enabled to your visitors."
-#: ../controlpanel/bookmarks.py:26
+#: sc/social/bookmarks/controlpanel/bookmarks.py:23
 msgid "help_selected_providers"
 msgstr "Bitte wählen Sie die Anbieter die angezeigt werden sollen."
 
-msgid "Bookmark providers"
-msgstr "Social Media Anbieter"
+#. Default: "Check this if you want the social bookmarks to be rendered as icons only."
+#: sc/social/bookmarks/controlpanel/bookmarks.py:46
+msgid "help_show_icons_only"
+msgstr "Aktivieren Sie dieses Kästchen um die Anbieter nur als Icon ohne Beschriftung anzuzeigen."
 
-msgid "Content types"
-msgstr "Inhaltstypen"
-
-msgid "Use as a content action?"
-msgstr "In Overlay anzeigen?"
-
+#. Default: "Check this if you want the social bookmarks to appear as an action for contents."
+#: sc/social/bookmarks/controlpanel/bookmarks.py:39
 msgid "help_use_as_content_action"
 msgstr "Aktivieren Sie dieses Kästchen um die Anbieter in einem Overlay anzuzeigen."
 
-msgid "Show icons only?"
-msgstr "Nur icons anzeigen?"
+#. Default: "Bookmark & Share"
+#: sc/social/bookmarks/browser/templates/bookmarks_portlet.pt:10
+msgid "social_bookmarks_title"
+msgstr ""
 
-msgid "help_show_icons_only"
-msgstr "Aktivieren Sie dieses Kästchen um die Anbieter nur als Icon ohne Beschriftung anzuzeigen."

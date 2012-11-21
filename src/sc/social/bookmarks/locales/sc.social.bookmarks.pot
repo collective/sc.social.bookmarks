@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-08-25 02:21+0000\n"
+"POT-Creation-Date: 2012-11-21 17:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,36 +14,69 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#. Default: "Bookmark & Share:"
-#: ../browser/templates/bookmarks.pt:4
-msgid "Bookmark &amp; Share:"
+#: sc/social/bookmarks/browser/portlet.py:28
+msgid "Add a social bookmarks portlet"
 msgstr ""
 
-#: ../controlpanel/bookmarks.py:78
-msgid "Providers"
+#: sc/social/bookmarks/controlpanel/bookmarks.py:22
+msgid "Bookmark providers"
 msgstr ""
 
-#: ../controlpanel/bookmarks.py:77
-msgid "Select Social Bookmarks Providers available for this site."
+#: sc/social/bookmarks/controlpanel/bookmarks.py:30
+msgid "Content types"
 msgstr ""
 
-#: ../controlpanel/bookmarks.py:76
+#: sc/social/bookmarks/controlpanel/bookmarks.py:57
+msgid "Select Social Bookmarks Providers available for this
+                        site."
+msgstr ""
+
+#: sc/social/bookmarks/controlpanel/bookmarks.py:45
+msgid "Show icons only?"
+msgstr ""
+
+#: sc/social/bookmarks/controlpanel/bookmarks.py:56
 msgid "Social Bookmark Providers settings"
 msgstr ""
 
-#. Default: "Social Bookmarks"
-#: ../profiles/default/actionicons.xml
-#: ../profiles/default/controlpanel.xml
+#: sc/social/bookmarks/profiles/default/controlpanel.xml
 msgid "Social Bookmarks"
 msgstr ""
 
+#: sc/social/bookmarks/browser/portlet.py:23
+msgid "Social Bookmarks Portlet"
+msgstr ""
+
+#: sc/social/bookmarks/browser/portlet.py:29
+msgid "This portlet shows links to other sites, where the current content can be posted to."
+msgstr ""
+
+#: sc/social/bookmarks/controlpanel/bookmarks.py:38
+msgid "Use as a content action?"
+msgstr ""
+
 #. Default: "Please select content types in which the viewlet will be applied."
-#: ../controlpanel/bookmarks.py:51
+#: sc/social/bookmarks/controlpanel/bookmarks.py:31
 msgid "help_portal_types"
 msgstr ""
 
 #. Default: "Please check any provider you want to be enabled to your visitors."
-#: ../controlpanel/bookmarks.py:43
+#: sc/social/bookmarks/controlpanel/bookmarks.py:23
 msgid "help_selected_providers"
+msgstr ""
+
+#. Default: "Check this if you want the social bookmarks to be rendered as icons only."
+#: sc/social/bookmarks/controlpanel/bookmarks.py:46
+msgid "help_show_icons_only"
+msgstr ""
+
+#. Default: "Check this if you want the social bookmarks to appear as an action for contents."
+#: sc/social/bookmarks/controlpanel/bookmarks.py:39
+msgid "help_use_as_content_action"
+msgstr ""
+
+#. Default: "Bookmark & Share"
+#: sc/social/bookmarks/browser/templates/bookmarks_portlet.pt:10
+msgid "social_bookmarks_title"
 msgstr ""
 
