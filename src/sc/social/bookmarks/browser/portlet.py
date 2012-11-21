@@ -27,7 +27,7 @@ class AddForm(base.NullAddForm):
     form_fields = form.Fields(ISocialBookmarksPortlet)
     label = _(u"Add a social bookmarks portlet")
     description = _(u"This portlet shows links to other sites, where the "
-                    u"current content can be postet to.")
+                    u"current content can be posted to.")
 
     def create(self):
         return Assignment()
