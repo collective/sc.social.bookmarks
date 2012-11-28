@@ -5,7 +5,6 @@
   <browser:page
       name="bookmarks-providers"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      for="*"
       class=".bookmarks.ProvidersControlPanel"
       permission="cmf.ManagePortal"
       />
