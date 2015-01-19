@@ -31,7 +31,7 @@ class SocialBookmarksBase(object):
 
     @memoize
     def _all_providers(self):
-        ''' Return a dict with all providers '''
+        """ Return a dict with all providers """
         reg = self._registry()
         providers = [reg[k] for k in reg.records.keys()
                      if k.startswith('sc.social.bookmarks.providers')]
@@ -69,10 +69,12 @@ class SocialBookmarksBase(object):
         context = aq_inner(self.context)
         available = self._availableProviders()
         providers = []
-        param = {}
-        param['title'] = context.Title()
-        param['description'] = context.Description()
-        param['url'] = context.absolute_url()
+        # Attributes available to be substituted in the URL
+        param = {
+            'title': context.Title(),
+            'description': context.Description(),
+            'url': context.absolute_url()
+        }
         # BBB: Instead of using string formatting we moved to string Templates
         pattern = re.compile("\%\(([a-zA-Z]*)\)s")
         for provider in available:
