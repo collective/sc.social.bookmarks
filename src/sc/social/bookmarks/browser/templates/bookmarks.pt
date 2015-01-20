@@ -13,7 +13,7 @@
       <a href="" title="" tal:attributes="href provider/url;
                                           title string:${provider/id}">
         <img src=""
-             tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo};
+             tal:attributes="src provider/icon_url;
                              alt string:${provider/id}" />
         <span class="bookmark_id"
               tal:condition="not:icons_only"

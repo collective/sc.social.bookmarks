@@ -66,6 +66,7 @@ class SocialBookmarksBase(object):
         filtered and populated.
         """
         context = aq_inner(self.context)
+        portal_url = getToolByName(context, 'portal_url')()
         available = self._availableProviders()
         providers = []
         # Attributes available to be substituted in the URL
@@ -85,6 +86,14 @@ class SocialBookmarksBase(object):
                 continue
             url_tmpl = re.sub(pattern, r'${\1}', url_tmpl)
             provider['url'] = Template(url_tmpl).safe_substitute(param)
+
+            resource_name = provider.get('resource', 'sb_images')
+            logo = provider.get('logo', '')
+            provider['icon_url'] = '%s/++resource++%s/%s' % (
+                portal_url,
+                resource_name,
+                logo
+            )
             providers.append(provider)
         return providers
 
