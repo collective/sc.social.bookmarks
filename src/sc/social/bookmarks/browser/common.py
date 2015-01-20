@@ -54,11 +54,7 @@ class SocialBookmarksBase(object):
             provider = all_providers.get(bookmark_id, None)
             if not provider:
                 continue
-            logo = provider.get('logo', '')
-            url = provider.get('url', '')
-            providers.append({'id': bookmark_id,
-                              'logo': logo,
-                              'url': url})
+            providers.append(provider)
 
         return providers
 
