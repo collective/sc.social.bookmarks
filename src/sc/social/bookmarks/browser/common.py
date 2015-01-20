@@ -22,6 +22,9 @@ from zope.publisher.interfaces.browser import IBrowserView
 from ..controlpanel.bookmarks import IProvidersSchema
 
 
+logger = logging.getLogger(__name__)
+
+
 class SocialBookmarksBase(object):
     """Abstract Base class for social bookmarks.
     """
@@ -75,7 +78,10 @@ class SocialBookmarksBase(object):
         pattern = re.compile("\%\(([a-zA-Z]*)\)s")
         for provider in available:
             url_tmpl = provider.get('url', '').strip()
-            if not(url_tmpl):
+            logo = provider.get('logo', '')
+            if not url_tmpl or not logo:
+                # A provider must have a logo and a share URL
+                logger.error('Provider %s has not URL or logo specified', provider['id'])
                 continue
             url_tmpl = re.sub(pattern, r'${\1}', url_tmpl)
             provider['url'] = Template(url_tmpl).safe_substitute(param)
