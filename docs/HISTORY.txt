@@ -26,6 +26,9 @@ Changelog
     * PEP8 and PyFlakes compliancy
       [ericof]
 
+    * Allow specifying resource for bookmark image
+      [wengole]
+
 
 1.2.3 (2012-06-12)
 ^^^^^^^^^^^^^^^^^^^^
