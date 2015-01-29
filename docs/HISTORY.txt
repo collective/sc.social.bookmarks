@@ -29,6 +29,9 @@ Changelog
     * Allow specifying resource for bookmark image
       [wengole]
 
+    * Share links now open popups
+      [wengole]
+
 
 1.2.3 (2012-06-12)
 ^^^^^^^^^^^^^^^^^^^^
