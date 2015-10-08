@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.3.2.dev0'
+version = '1.3.2'
 long_description = (open("README.txt").read() + "\n" +
                     open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
                     open(os.path.join("docs", "CREDITS.txt")).read() + "\n" +
