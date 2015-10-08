@@ -13,7 +13,7 @@ setup(name='sc.social.bookmarks',
                      Plone Site""",
       long_description=long_description,
       classifiers=[
-          "Development Status :: 5 - Stable",
+          "Development Status :: 5 - Production/Stable",
           "Environment :: Web Environment",
           "Framework :: Plone",
           "Framework :: Plone :: 4.1",
