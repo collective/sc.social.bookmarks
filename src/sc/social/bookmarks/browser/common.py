@@ -28,11 +28,9 @@ logger = logging.getLogger(__name__)
 class SocialBookmarksBase(object):
     """Abstract Base class for social bookmarks.
     """
-    @memoize
     def _registry(self):
         return getUtility(IRegistry)
 
-    @memoize
     def _all_providers(self):
         """ Return a dict with all providers """
         reg = self._registry()
@@ -41,14 +39,12 @@ class SocialBookmarksBase(object):
         all_providers = dict([(p.get('id'), p) for p in providers])
         return all_providers
 
-    @memoize
     def settings(self):
         reg = self._registry()
         controlpanel = reg.forInterface(IProvidersSchema,
                                         prefix="sc.social.bookmarks")
         return controlpanel
 
-    @memoize
     def _availableProviders(self):
         all_providers = self._all_providers()
         bookmark_providers = self.settings().bookmark_providers or []
@@ -78,6 +74,7 @@ class SocialBookmarksBase(object):
         # BBB: Instead of using string formatting we moved to string Templates
         pattern = re.compile("\%\(([a-zA-Z]*)\)s")
         for provider in available:
+            rendered_provider = provider.copy()
             url_tmpl = provider.get('url', '').strip()
             logo = provider.get('logo', '')
             if not url_tmpl or not logo:
@@ -85,16 +82,16 @@ class SocialBookmarksBase(object):
                 logger.error('Provider %s has not URL or logo specified', provider['id'])
                 continue
             url_tmpl = re.sub(pattern, r'${\1}', url_tmpl)
-            provider['url'] = Template(url_tmpl).safe_substitute(param)
+            rendered_provider['url'] = Template(url_tmpl).safe_substitute(param)
 
             resource_name = provider.get('resource', 'sb_images')
             logo = provider.get('logo', '')
-            provider['icon_url'] = '%s/++resource++%s/%s' % (
+            rendered_provider['icon_url'] = '%s/++resource++%s/%s' % (
                 portal_url,
                 resource_name,
                 logo
             )
-            providers.append(provider)
+            providers.append(rendered_provider)
         return providers
 
     @property
