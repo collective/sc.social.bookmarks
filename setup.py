@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.3dev'
+version = '1.3.3.dev0'
 long_description = (open("README.txt").read() + "\n" +
                     open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
                     open(os.path.join("docs", "CREDITS.txt")).read() + "\n" +
@@ -13,7 +13,7 @@ setup(name='sc.social.bookmarks',
                      Plone Site""",
       long_description=long_description,
       classifiers=[
-          "Development Status :: 5 - Stable",
+          "Development Status :: 5 - Production/Stable",
           "Environment :: Web Environment",
           "Framework :: Plone",
           "Framework :: Plone :: 4.1",

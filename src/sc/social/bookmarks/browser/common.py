@@ -1,55 +1,50 @@
 # -*- coding: utf-8 -*-
+import logging
 import re
 from string import Template
 
 from Acquisition import aq_inner
 from Acquisition import Explicit
-
-from zope.interface import Interface
-from zope.interface import implements
-
-from zope.component import adapts
-from zope.component import getUtility
-
-from zope.contentprovider.interfaces import IContentProvider
-
-from zope.publisher.interfaces.browser import IBrowserRequest
-from zope.publisher.interfaces.browser import IBrowserView
-
+from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from plone.app.layout.viewlets import ViewletBase
 from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
+from zope.component import adapts
+from zope.component import getUtility
+from zope.contentprovider.interfaces import IContentProvider
+from zope.interface import Interface
+from zope.interface import implements
+from zope.publisher.interfaces.browser import IBrowserRequest
+from zope.publisher.interfaces.browser import IBrowserView
 
-from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
+from ..controlpanel.bookmarks import IProvidersSchema
+
+
+logger = logging.getLogger(__name__)
 
 
 class SocialBookmarksBase(object):
     """Abstract Base class for social bookmarks.
     """
-    @memoize
     def _registry(self):
         return getUtility(IRegistry)
 
-    @memoize
     def _all_providers(self):
-        ''' Return a dict with all providers '''
+        """ Return a dict with all providers """
         reg = self._registry()
         providers = [reg[k] for k in reg.records.keys()
                      if k.startswith('sc.social.bookmarks.providers')]
         all_providers = dict([(p.get('id'), p) for p in providers])
         return all_providers
 
-    @memoize
     def settings(self):
         reg = self._registry()
         controlpanel = reg.forInterface(IProvidersSchema,
                                         prefix="sc.social.bookmarks")
         return controlpanel
 
-    @memoize
     def _availableProviders(self):
         all_providers = self._all_providers()
         bookmark_providers = self.settings().bookmark_providers or []
@@ -58,11 +53,7 @@ class SocialBookmarksBase(object):
             provider = all_providers.get(bookmark_id, None)
             if not provider:
                 continue
-            logo = provider.get('logo', '')
-            url = provider.get('url', '')
-            providers.append({'id': bookmark_id,
-                              'logo': logo,
-                              'url': url})
+            providers.append(provider)
 
         return providers
 
@@ -71,21 +62,36 @@ class SocialBookmarksBase(object):
         filtered and populated.
         """
         context = aq_inner(self.context)
+        portal_url = getToolByName(context, 'portal_url')()
         available = self._availableProviders()
         providers = []
-        param = {}
-        param['title'] = context.Title()
-        param['description'] = context.Description()
-        param['url'] = context.absolute_url()
+        # Attributes available to be substituted in the URL
+        param = {
+            'title': context.Title(),
+            'description': context.Description(),
+            'url': context.absolute_url()
+        }
         # BBB: Instead of using string formatting we moved to string Templates
         pattern = re.compile("\%\(([a-zA-Z]*)\)s")
         for provider in available:
+            rendered_provider = provider.copy()
             url_tmpl = provider.get('url', '').strip()
-            if not(url_tmpl):
+            logo = provider.get('logo', '')
+            if not url_tmpl or not logo:
+                # A provider must have a logo and a share URL
+                logger.error('Provider %s has not URL or logo specified', provider['id'])
                 continue
             url_tmpl = re.sub(pattern, r'${\1}', url_tmpl)
-            provider['url'] = Template(url_tmpl).safe_substitute(param)
-            providers.append(provider)
+            rendered_provider['url'] = Template(url_tmpl).safe_substitute(param)
+
+            resource_name = provider.get('resource', 'sb_images')
+            logo = provider.get('logo', '')
+            rendered_provider['icon_url'] = '%s/++resource++%s/%s' % (
+                portal_url,
+                resource_name,
+                logo
+            )
+            providers.append(rendered_provider)
         return providers
 
     @property

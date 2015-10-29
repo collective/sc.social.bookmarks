@@ -10,10 +10,14 @@
   <ul tal:define="portal_url context/@@plone_portal_state/portal_url"
       tal:attributes="class python:icons_only and 'icons_only' or None">
     <li tal:repeat="provider view/providers">
-      <a href="" title="" tal:attributes="href provider/url;
-                                          title string:${provider/id}">
+      <a href=""
+         title=""
+         target="_blank"
+         onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+         tal:attributes="href provider/url;
+                         title string:${provider/id}">
         <img src=""
-             tal:attributes="src string:${portal_url}/++resource++sb_images/${provider/logo};
+             tal:attributes="src provider/icon_url;
                              alt string:${provider/id}" />
         <span class="bookmark_id"
               tal:condition="not:icons_only"
