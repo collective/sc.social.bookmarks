@@ -2,18 +2,15 @@
 from setuptools import find_packages
 from setuptools import setup
 
-import os
-
 
 version = "1.3dev"
-long_description = (
-    open("README.txt").read()
-    + "\n"
-    + open(os.path.join("docs", "INSTALL.txt")).read()
-    + "\n"
-    + open(os.path.join("docs", "CREDITS.txt")).read()
-    + "\n"
-    + open(os.path.join("docs", "HISTORY.txt")).read()
+
+long_description = "\n\n".join(
+    [
+        open("README.rst").read(),
+        open("CONTRIBUTORS.rst").read(),
+        open("CHANGES.rst").read(),
+    ]
 )
 
 setup(
