@@ -26,6 +26,7 @@ setup(
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
         "Framework :: Plone :: 4.3",
+        "Framework :: Plone :: 5.2",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
@@ -47,7 +48,6 @@ setup(
     install_requires=[
         "setuptools",
         "Products.CMFCore",
-        "Products.CMFDefault",
         "Products.CMFPlone",
         "plone.app.controlpanel",
         "plone.app.layout",

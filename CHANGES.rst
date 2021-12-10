@@ -4,6 +4,9 @@ Changelog
 1.3dev (unreleased)
 -------------------
 
+- Add support to Plone 5.2.
+  [wesleybl]
+
 - Refactor tests to use plone.app.testing
   [ericof]
 
