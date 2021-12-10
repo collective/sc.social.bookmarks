@@ -23,9 +23,6 @@ setup(
         "Development Status :: 5 - Stable",
         "Environment :: Web Environment",
         "Framework :: Plone",
-        "Framework :: Plone :: 4.1",
-        "Framework :: Plone :: 4.2",
-        "Framework :: Plone :: 4.3",
         "Framework :: Plone :: 5.2",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
@@ -48,7 +45,7 @@ setup(
     install_requires=[
         "setuptools",
         "Products.CMFCore",
-        "Products.CMFPlone",
+        "Products.CMFPlone >=5.2",
         "plone.app.controlpanel",
         "plone.app.layout",
         "plone.app.portlets",

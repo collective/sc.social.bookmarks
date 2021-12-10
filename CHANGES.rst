@@ -4,6 +4,9 @@ Changelog
 1.3dev (unreleased)
 -------------------
 
+- Drop support to Plone 4.
+  [wesleybl]
+
 - Add support to Plone 5.2.
   [wesleybl]
 
