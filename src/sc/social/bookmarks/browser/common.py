@@ -27,26 +27,28 @@ from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 
 
 class SocialBookmarksBase(object):
-    """Abstract Base class for social bookmarks.
-    """
+    """Abstract Base class for social bookmarks."""
+
     @memoize
     def _registry(self):
         return getUtility(IRegistry)
 
     @memoize
     def _all_providers(self):
-        ''' Return a dict with all providers '''
+        """Return a dict with all providers"""
         reg = self._registry()
-        providers = [reg[k] for k in reg.records.keys()
-                     if k.startswith('sc.social.bookmarks.providers')]
-        all_providers = dict([(p.get('id'), p) for p in providers])
+        providers = [
+            reg[k]
+            for k in reg.records.keys()
+            if k.startswith("sc.social.bookmarks.providers")
+        ]
+        all_providers = dict([(p.get("id"), p) for p in providers])
         return all_providers
 
     @memoize
     def settings(self):
         reg = self._registry()
-        controlpanel = reg.forInterface(IProvidersSchema,
-                                        prefix="sc.social.bookmarks")
+        controlpanel = reg.forInterface(IProvidersSchema, prefix="sc.social.bookmarks")
         return controlpanel
 
     @memoize
@@ -58,11 +60,9 @@ class SocialBookmarksBase(object):
             provider = all_providers.get(bookmark_id, None)
             if not provider:
                 continue
-            logo = provider.get('logo', '')
-            url = provider.get('url', '')
-            providers.append({'id': bookmark_id,
-                              'logo': logo,
-                              'url': url})
+            logo = provider.get("logo", "")
+            url = provider.get("url", "")
+            providers.append({"id": bookmark_id, "logo": logo, "url": url})
 
         return providers
 
@@ -74,24 +74,23 @@ class SocialBookmarksBase(object):
         available = self._availableProviders()
         providers = []
         param = {}
-        param['title'] = context.Title()
-        param['description'] = context.Description()
-        param['url'] = context.absolute_url()
+        param["title"] = context.Title()
+        param["description"] = context.Description()
+        param["url"] = context.absolute_url()
         # BBB: Instead of using string formatting we moved to string Templates
         pattern = re.compile("\%\(([a-zA-Z]*)\)s")
         for provider in available:
-            url_tmpl = provider.get('url', '').strip()
-            if not(url_tmpl):
+            url_tmpl = provider.get("url", "").strip()
+            if not (url_tmpl):
                 continue
-            url_tmpl = re.sub(pattern, r'${\1}', url_tmpl)
-            provider['url'] = Template(url_tmpl).safe_substitute(param)
+            url_tmpl = re.sub(pattern, r"${\1}", url_tmpl)
+            provider["url"] = Template(url_tmpl).safe_substitute(param)
             providers.append(provider)
         return providers
 
     @property
     def icons_only(self):
-        """Flag whether to show icons only.
-        """
+        """Flag whether to show icons only."""
         return self.settings().show_icons_only or False
 
     @property
@@ -112,12 +111,11 @@ class SocialBookmarksBase(object):
 
 
 class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
-    """Social Bookmarks Viewlet content provider
-    """
+    """Social Bookmarks Viewlet content provider"""
 
     implements(IContentProvider)
     adapts(Interface, IBrowserRequest, IBrowserView)
-    template = ViewPageTemplateFile(u'templates/bookmarks.pt')
+    template = ViewPageTemplateFile(u"templates/bookmarks.pt")
 
     def __init__(self, context, request, view):
         self.__parent__ = view
@@ -132,14 +130,13 @@ class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
 
 
 class SocialBookmarksView(BrowserView, SocialBookmarksBase):
-    """Social Bookmarks View
-    """
+    """Social Bookmarks View"""
 
 
 class SocialBookmarksViewlet(ViewletBase, SocialBookmarksBase):
-    """Social Bookmarks Viewlet
-    """
-    template = ViewPageTemplateFile('templates/bookmarks_viewlet.pt')
+    """Social Bookmarks Viewlet"""
+
+    template = ViewPageTemplateFile("templates/bookmarks_viewlet.pt")
 
     def render(self):
         return self.template(self)
