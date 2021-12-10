@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -26,7 +27,7 @@ class SocialBookmarksTest(unittest.TestCase):
             (self.portal, self.portal.REQUEST), name="bookmarks-providers"
         )
         view = view.__of__(self.portal)
-        self.failUnless(view())
+        self.assertTrue(view())
 
     def test_controlpanel_view_is_protected(self):
         # social bookmarks setting control panel view can not be accessed
@@ -41,7 +42,7 @@ class SocialBookmarksTest(unittest.TestCase):
     def test_controlpanel_installed(self):
         cp = self.controlpanel
         installed = [a.getAction(self)["id"] for a in cp.listActions()]
-        self.failUnless("socialbookmarks" in installed)
+        self.assertTrue("socialbookmarks" in installed)
 
     def test_controlpanel_removed_on_uninstall(self):
         qi = self.portal["portal_quickinstaller"]

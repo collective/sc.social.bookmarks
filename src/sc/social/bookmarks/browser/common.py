@@ -71,7 +71,7 @@ class SocialBookmarksBase(object):
         param["description"] = context.Description()
         param["url"] = context.absolute_url()
         # BBB: Instead of using string formatting we moved to string Templates
-        pattern = re.compile("\%\(([a-zA-Z]*)\)s")
+        pattern = re.compile(r"\%\(([a-zA-Z]*)\)s")
         for provider in available:
             url_tmpl = provider.get("url", "").strip()
             if not (url_tmpl):

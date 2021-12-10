@@ -18,7 +18,7 @@ def removeConfiglets(context):
     controlpanel = getToolByName(context, "portal_controlpanel", None)
     if controlpanel:
         controlpanel.unregisterConfiglet(configlet)
-        logger.log(logging.INFO, "Unregistered configlet %s\n" % configlet)
+        logger.log(logging.INFO, "Unregistered configlet {0}\n".format(configlet))
 
 
 def uninstall(context):
