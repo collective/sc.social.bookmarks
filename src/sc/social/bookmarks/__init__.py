@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from zope.i18nmessageid import MessageFactory
-_ = MessageFactory('sc.social.bookmarks')
+
+
+_ = MessageFactory("sc.social.bookmarks")
 
 
 def initialize(context):

@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
-import logging
-
+from plone.registry.interfaces import IRegistry
+from Products.CMFCore.utils import getToolByName
+from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 from zope.component import getUtility
 
-from plone.registry.interfaces import IRegistry
-
-from Products.CMFCore.utils import getToolByName
-
-from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
+import logging
 
 
 logger = logging.getLogger("sc.social.bookmarks")
 
-profile_id = 'sc.social.bookmarks:default'
+profile_id = "sc.social.bookmarks:default"
 
 
 def removeConfiglets(context):
@@ -21,7 +18,7 @@ def removeConfiglets(context):
     controlpanel = getToolByName(context, "portal_controlpanel", None)
     if controlpanel:
         controlpanel.unregisterConfiglet(configlet)
-        logger.log(logging.INFO, "Unregistered configlet %s\n" % configlet)
+        logger.log(logging.INFO, "Unregistered configlet {0}\n".format(configlet))
 
 
 def uninstall(context):
@@ -35,21 +32,20 @@ def uninstall(context):
 
 
 def upgrade_1_to_2(context):
-    context.runAllImportStepsFromProfile('profile-sc.social.bookmarks:default')
+    context.runAllImportStepsFromProfile("profile-sc.social.bookmarks:default")
     # This way we will be able to run other steps
-    context.setLastVersionForProfile(profile_id, u'2')
+    context.setLastVersionForProfile(profile_id, u"2")
 
 
 def upgrade_2_to_3(context):
     # First, make sure, the profile is applied to prepare the registry
-    context.runAllImportStepsFromProfile('profile-sc.social.bookmarks:default')
+    context.runAllImportStepsFromProfile("profile-sc.social.bookmarks:default")
 
     registry = getUtility(IRegistry)
-    controlpanel = registry.forInterface(IProvidersSchema,
-                                         prefix="sc.social.bookmarks")
+    controlpanel = registry.forInterface(IProvidersSchema, prefix="sc.social.bookmarks")
 
-    props = getToolByName(context, 'portal_properties')
-    sheet = getattr(props, 'sc_social_bookmarks_properties', None)
+    props = getToolByName(context, "portal_properties")
+    sheet = getattr(props, "sc_social_bookmarks_properties", None)
 
     # Then migrate individual settings
     if sheet:
@@ -63,14 +59,16 @@ def upgrade_2_to_3(context):
 
         enabled_portal_types = sheet.getProperty("enabled_portal_types")
         controlpanel.enabled_portal_types = enabled_portal_types
-        logger.info(u"""Setting enabled_portal_types migrated
-                        to plone.registry.""")
+        logger.info(
+            u"""Setting enabled_portal_types migrated
+                        to plone.registry."""
+        )
 
         show_icons_only = sheet.getProperty("show_icons_only")
         controlpanel.show_icons_only = show_icons_only
         logger.info(u"Setting show_icons_only migrated to plone.registry.")
 
-        sheet.manage_delObjects('sc_social_bookmarks_properties')
+        sheet.manage_delObjects("sc_social_bookmarks_properties")
         logger.info(u"Deleted property sheet.")
     # This way we will be able to run other steps
-    context.setLastVersionForProfile(profile_id, u'3')
+    context.setLastVersionForProfile(profile_id, u"3")
