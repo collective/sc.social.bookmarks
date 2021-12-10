@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from Products.CMFCore.utils import getToolByName
-
 from sc.social.bookmarks.config import PROJECTNAME
 
 

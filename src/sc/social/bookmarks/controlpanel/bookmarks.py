@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
+from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
+from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.z3cform import layout
+from sc.social.bookmarks import _
 from zope.interface import Interface
-
 from zope.schema import Bool
 from zope.schema import Choice
 from zope.schema import Tuple
 
-from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
-from plone.app.registry.browser.controlpanel import RegistryEditForm
-
-from plone.z3cform import layout
-
-from sc.social.bookmarks import _
 
 PROVIDERS = "plone.app.vocabularies.SocialBookmarksProviders"
 TYPES = "plone.app.vocabularies.ReallyUserFriendlyTypes"

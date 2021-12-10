@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
-import logging
-
+from plone.registry.interfaces import IRegistry
+from Products.CMFCore.utils import getToolByName
+from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 from zope.component import getUtility
 
-from plone.registry.interfaces import IRegistry
-
-from Products.CMFCore.utils import getToolByName
-
-from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
+import logging
 
 
 logger = logging.getLogger("sc.social.bookmarks")

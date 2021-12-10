@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
-from zope.formlib import form
-from zope.interface import implements
-
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from sc.social.bookmarks import _
 from sc.social.bookmarks.browser.common import SocialBookmarksBase
+from zope.formlib import form
+from zope.interface import implements
 
 
 class ISocialBookmarksPortlet(IPortletDataProvider):

@@ -1,17 +1,14 @@
-import unittest
-
-from zope.component import getMultiAdapter
-from zope.component import getUtility
-
 from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-
 from plone.registry.interfaces import IRegistry
-
 from sc.social.bookmarks.config import PROJECTNAME
 from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 from sc.social.bookmarks.testing import INTEGRATION_TESTING
+from zope.component import getMultiAdapter
+from zope.component import getUtility
+
+import unittest
 
 
 class SocialBookmarksTest(unittest.TestCase):

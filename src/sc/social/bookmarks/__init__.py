@@ -2,6 +2,7 @@
 
 from zope.i18nmessageid import MessageFactory
 
+
 _ = MessageFactory("sc.social.bookmarks")
 
 

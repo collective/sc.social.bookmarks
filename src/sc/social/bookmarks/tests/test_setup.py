@@ -1,19 +1,14 @@
-import unittest
-
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.browserlayer.utils import registered_layers
+from plone.registry.interfaces import IRegistry
+from sc.social.bookmarks.config import PROJECTNAME
+from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
+from sc.social.bookmarks.testing import INTEGRATION_TESTING
 from zope.component import getUtility
 
-from plone.browserlayer.utils import registered_layers
+import unittest
 
-from plone.registry.interfaces import IRegistry
-
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
-
-from sc.social.bookmarks.config import PROJECTNAME
-
-from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
-
-from sc.social.bookmarks.testing import INTEGRATION_TESTING
 
 CSS = ("++resource++sb_resources/social_bookmark.css",)
 
@@ -34,9 +29,9 @@ class InstallTestCase(unittest.TestCase):
     def _load_profile(self, st=None, profile_id=""):
         if not (st and profile_id):
             return
-        from Products.GenericSetup import profile_registry
         from Products.CMFCore.interfaces import ISiteRoot
         from Products.GenericSetup import EXTENSION
+        from Products.GenericSetup import profile_registry
 
         profile_registry.registerProfile(
             name=profile_id,

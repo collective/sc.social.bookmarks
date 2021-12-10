@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
-from zope.component import getUtility
-
-from zope.interface import implements
-
-from zope.schema.interfaces import IVocabularyFactory
-
-from zope.schema.vocabulary import SimpleVocabulary
-from zope.schema.vocabulary import SimpleTerm
-
 from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+from zope.interface import implements
+from zope.schema.interfaces import IVocabularyFactory
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 class SBProvidersVocabulary(object):

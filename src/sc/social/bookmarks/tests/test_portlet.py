@@ -1,30 +1,23 @@
 # -*- coding: utf-8 -*-
 
-import unittest2 as unittest
-
-from zope.component import getUtility
-from zope.component import getMultiAdapter
-from zope.component import queryUtility
-
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
 from plone.app.testing import logout
-
-from plone.portlets.interfaces import IPortletType
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.portlets.interfaces import IPortletAssignment
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.portlets.interfaces import IPortletManager
 from plone.portlets.interfaces import IPortletRenderer
-
+from plone.portlets.interfaces import IPortletType
 from plone.registry.interfaces import IRegistry
-
 from Products.GenericSetup.utils import _getDottedName
-
 from sc.social.bookmarks.browser import portlet
-
 from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
-
 from sc.social.bookmarks.testing import INTEGRATION_TESTING
+from zope.component import getMultiAdapter
+from zope.component import getUtility
+from zope.component import queryUtility
+
+import unittest2 as unittest
 
 
 class BasePortlet(unittest.TestCase):
