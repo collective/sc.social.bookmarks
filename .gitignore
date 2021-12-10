@@ -20,6 +20,7 @@ test.plone_addon/
 var/
 .settings/
 # files
+coverage.xml
 .coverage.*
 .*project
 .installed.cfg
