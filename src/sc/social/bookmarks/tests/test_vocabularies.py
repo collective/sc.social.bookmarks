@@ -4,7 +4,7 @@ from plone.testing import layered
 from sc.social.bookmarks.testing import INTEGRATION_TESTING
 
 import doctest
-import unittest2 as unittest
+import unittest
 
 
 optionflags = (

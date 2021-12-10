@@ -9,7 +9,7 @@ from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 from sc.social.bookmarks.testing import INTEGRATION_TESTING
 from zope.component import getUtility
 
-import unittest2 as unittest
+import unittest
 
 
 class ViewletTest(unittest.TestCase):

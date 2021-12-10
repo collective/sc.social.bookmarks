@@ -17,7 +17,7 @@ from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.component import queryUtility
 
-import unittest2 as unittest
+import unittest
 
 
 class BasePortlet(unittest.TestCase):
