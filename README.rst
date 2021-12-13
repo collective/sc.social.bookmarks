@@ -8,7 +8,7 @@ Social bookmarks
 Overview
 --------
 
-This product adds a Bookmark & Share action to a Plone 4 site.
+This product adds a Bookmark & Share action to a Plone site.
 
 It allows an anonymous or registered user to bookmark or share a content from a
 Plone site to a service like Delicious, Digg, Reddit or Twitter (62 providers
@@ -18,7 +18,7 @@ already included).
 Requirements
 ------------
 
-    - Plone 4.x (http://plone.org/products/plone)
+    - Plone 5.2 (http://plone.org/products/plone)
 
 
 Browsers and OS's
