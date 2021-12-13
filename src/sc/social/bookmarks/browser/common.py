@@ -8,10 +8,10 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from sc.social.bookmarks.controlpanel.bookmarks import IProvidersSchema
 from string import Template
-from zope.component import adapts
+from zope.component import adapter
 from zope.component import getUtility
 from zope.contentprovider.interfaces import IContentProvider
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IBrowserRequest
 from zope.publisher.interfaces.browser import IBrowserView
@@ -103,11 +103,11 @@ class SocialBookmarksBase(object):
         return context.portal_type in enabled_portal_types
 
 
+@implementer(IContentProvider)
+@adapter(Interface, IBrowserRequest, IBrowserView)
 class SocialBookmarksProvider(Explicit, SocialBookmarksBase):
     """Social Bookmarks Viewlet content provider"""
 
-    implements(IContentProvider)
-    adapts(Interface, IBrowserRequest, IBrowserView)
     template = ViewPageTemplateFile(u"templates/bookmarks.pt")
 
     def __init__(self, context, request, view):

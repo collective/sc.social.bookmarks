@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
-from zope.interface import implements
+from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
+@implementer(IVocabularyFactory)
 class SBProvidersVocabulary(object):
     """Vocabulary factory for existing bookmark providers
 
@@ -26,8 +27,6 @@ class SBProvidersVocabulary(object):
     >>> doc.title, doc.token, doc.value
     (u'Reddit', 'Reddit', u'Reddit')
     """
-
-    implements(IVocabularyFactory)
 
     def __call__(self, context=None):
         reg = getUtility(IRegistry)

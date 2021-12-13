@@ -5,16 +5,15 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from sc.social.bookmarks import _
 from sc.social.bookmarks.browser.common import SocialBookmarksBase
 from zope.formlib import form
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class ISocialBookmarksPortlet(IPortletDataProvider):
     pass
 
 
+@implementer(ISocialBookmarksPortlet)
 class Assignment(base.Assignment):
-    implements(ISocialBookmarksPortlet)
-
     @property
     def title(self):
         return _(u"Social Bookmarks Portlet")
