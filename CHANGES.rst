@@ -4,6 +4,9 @@ Changelog
 1.3dev (unreleased)
 -------------------
 
+- Remove old upgrade steps.
+  [wesleybl]
+
 - Add support to Python 3.6, 3.7 and 3.8.
   [wesleybl]
 
@@ -20,7 +23,6 @@ Changelog
   [ericof]
 
 - Use plone.registry instead portal_properties.
-  A migration step is included to migrate old settings to the registry.
   [thet]
 
 - Add bookmark titles to the <a> element instead of the <img>.

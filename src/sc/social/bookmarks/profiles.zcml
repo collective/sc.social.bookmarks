@@ -21,20 +21,4 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       />
 
-  <gs:upgradeStep
-      title="Upgrade sc.social.bookmarks 1-2"
-      description="Apply new profile settings"
-      source="1"
-      destination="2"
-      handler=".setuphandlers.upgrade_1_to_2"
-      profile="sc.social.bookmarks:default"/>
-
-  <gs:upgradeStep
-      title="Upgrade sc.social.bookmarks 2-3"
-      description="Migrate settings to plone.registry"
-      source="2"
-      destination="3"
-      handler=".setuphandlers.upgrade_2_to_3"
-      profile="sc.social.bookmarks:default"/>
-
 </configure>
