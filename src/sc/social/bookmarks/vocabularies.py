@@ -25,7 +25,7 @@ class SBProvidersVocabulary(object):
 
     >>> doc = providers.by_token['Reddit']
     >>> doc.title, doc.token, doc.value
-    (u'Reddit', 'Reddit', u'Reddit')
+    ('Reddit', 'Reddit', 'Reddit')
     """
 
     def __call__(self, context=None):

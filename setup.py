@@ -70,7 +70,11 @@ setup(
             "pep8",
             "setuptools-flakes",
         ],
-        "test": ["interlude", "plone.app.testing"],
+        "test": [
+            "interlude",
+            "plone.app.testing",
+            "six",
+        ],
     },
     entry_points="""
       [z3c.autoinclude.plugin]
