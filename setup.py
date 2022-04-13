@@ -28,6 +28,9 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -67,7 +70,11 @@ setup(
             "pep8",
             "setuptools-flakes",
         ],
-        "test": ["interlude", "plone.app.testing"],
+        "test": [
+            "interlude",
+            "plone.app.testing",
+            "six",
+        ],
     },
     entry_points="""
       [z3c.autoinclude.plugin]

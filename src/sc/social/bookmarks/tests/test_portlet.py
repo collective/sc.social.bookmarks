@@ -78,7 +78,7 @@ class PortletRegistrationTest(BasePortlet):
         addview()
 
         self.assertEqual(len(mapping), 1)
-        self.assertTrue(isinstance(mapping.values()[0], portlet.Assignment))
+        self.assertTrue(isinstance(list(mapping.values())[0], portlet.Assignment))
 
     def test_renderer(self):
         context = self.page
